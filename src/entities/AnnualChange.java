@@ -8,6 +8,18 @@ public class AnnualChange {
     private List<Child> newChildren;
     private List<ChildUpdate> childrenUpdates;
 
+    public AnnualChange() {
+
+    }
+
+    public AnnualChange(Double newSantaBudget, List<Gift> newGifts,
+                        List<Child> newChildren, List<ChildUpdate> childrenUpdates) {
+        this.newSantaBudget = newSantaBudget;
+        this.newGifts = newGifts;
+        this.newChildren = newChildren;
+        this.childrenUpdates = childrenUpdates;
+    }
+
     public Double getNewSantaBudget() {
         return newSantaBudget;
     }

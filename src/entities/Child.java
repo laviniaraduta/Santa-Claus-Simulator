@@ -1,17 +1,37 @@
 package entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import enums.Category;
+import enums.Cities;
 
 import java.util.List;
 
 public class Child {
     private Integer id;
-    private String lastname;
-    private String firstname;
+    private String lastName;
+    private String firstName;
     private Integer age;
+    private Cities city;
     private Double niceScore;
+
+    public Child() {
+    }
+
+    public Child(Integer id, String lastName, String firstName,
+                 Integer age, Cities city, Double niceScore,
+                 List<Category> giftsPreferences) {
+        this.id = id;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.age = age;
+        this.city = city;
+        this.niceScore = niceScore;
+        this.giftsPreferences = giftsPreferences;
+    }
+
+    @JsonIgnore
     private List<Double> niceScores;
-    private List<Category> giftsPreference;
+    private List<Category> giftsPreferences;
 
     public Integer getId() {
         return id;
@@ -21,20 +41,20 @@ public class Child {
         this.id = id;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public Integer getAge() {
@@ -43,6 +63,14 @@ public class Child {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public Cities getCity() {
+        return city;
+    }
+
+    public void setCity(Cities city) {
+        this.city = city;
     }
 
     public Double getNiceScore() {
@@ -61,11 +89,11 @@ public class Child {
         this.niceScores = niceScores;
     }
 
-    public List<Category> getGiftsPreference() {
-        return giftsPreference;
+    public List<Category> getGiftsPreferences() {
+        return giftsPreferences;
     }
 
-    public void setGiftsPreference(List<Category> giftsPreference) {
-        this.giftsPreference = giftsPreference;
+    public void setGiftsPreferences(List<Category> giftsPreferences) {
+        this.giftsPreferences = giftsPreferences;
     }
 }

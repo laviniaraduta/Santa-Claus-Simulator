@@ -6,6 +6,9 @@ public class InitialData {
     private List<Child> children;
     private List<Gift> santaGiftsList;
 
+    public InitialData() {
+
+    }
     public List<Child> getChildren() {
         return children;
     }

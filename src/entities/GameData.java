@@ -2,7 +2,7 @@ package entities;
 
 import java.util.List;
 
-public class Simulation {
+public class GameData {
     private Integer numberOfYears;
     private Double santaBudget;
     private InitialData initialData;

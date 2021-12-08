@@ -9,6 +9,9 @@ public class ChildUpdate {
     private Double niceScore;
     private List<Category> giftsPreferences;
 
+    public ChildUpdate() {
+
+    }
     public Integer getId() {
         return id;
     }
