@@ -2,8 +2,11 @@ package main;
 
 import checker.Checker;
 import common.Constants;
-import entities.GameData;
+import fileio.GameDataInput;
 import fileio.InputLoad;
+import fileio.Output;
+import fileio.Writer;
+import simulation.Simulation;
 
 import java.io.File;
 import java.io.IOException;
@@ -39,14 +42,18 @@ public final class Main {
 
         for (File file : Objects.requireNonNull(directory.listFiles())) {
             InputLoad inputLoader = new InputLoad(file.getPath());
-            GameData game = inputLoader.readInput();
+            GameDataInput game = inputLoader.readInput();
             String filepath = Constants.OUT_PATH + file.getName();
             File out = new File(filepath);
             boolean isCreated = out.createNewFile();
             if (isCreated) {
                 System.out.println("created");
             }
+            Output output = Simulation.applyRound(game);
+            Writer writer = new Writer(filepath);
+            writer.writeToFile(output);
         }
+
 
 //        checker.iterateFiles(Constants.RESULT_PATH, Constants.REF_PATH, Constants.TESTS_PATH);
 //        Checkstyle test = new Checkstyle();

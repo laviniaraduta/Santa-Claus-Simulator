@@ -7,10 +7,6 @@ public class Gift {
     private Double price;
     private Category category;
 
-    public Gift() {
-
-    }
-
     public Gift(String productName, Double price, Category category) {
         this.productName = productName;
         this.price = price;

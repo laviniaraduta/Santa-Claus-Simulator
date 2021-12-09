@@ -1,19 +1,19 @@
 package entities;
 
+import fileio.ChildInput;
+import fileio.ChildUpdateInput;
+import fileio.GiftInput;
+
 import java.util.List;
 
 public class AnnualChange {
     private Double newSantaBudget;
-    private List<Gift> newGifts;
-    private List<Child> newChildren;
-    private List<ChildUpdate> childrenUpdates;
+    private List<GiftInput> newGifts;
+    private List<ChildInput> newChildren;
+    private List<ChildUpdateInput> childrenUpdates;
 
-    public AnnualChange() {
-
-    }
-
-    public AnnualChange(Double newSantaBudget, List<Gift> newGifts,
-                        List<Child> newChildren, List<ChildUpdate> childrenUpdates) {
+    public AnnualChange(Double newSantaBudget, List<GiftInput> newGifts,
+                        List<ChildInput> newChildren, List<ChildUpdateInput> childrenUpdates) {
         this.newSantaBudget = newSantaBudget;
         this.newGifts = newGifts;
         this.newChildren = newChildren;
@@ -28,27 +28,27 @@ public class AnnualChange {
         this.newSantaBudget = newSantaBudget;
     }
 
-    public List<Gift> getNewGifts() {
+    public List<GiftInput> getNewGifts() {
         return newGifts;
     }
 
-    public void setNewGifts(List<Gift> newGifts) {
+    public void setNewGifts(List<GiftInput> newGifts) {
         this.newGifts = newGifts;
     }
 
-    public List<Child> getNewChildren() {
+    public List<ChildInput> getNewChildren() {
         return newChildren;
     }
 
-    public void setNewChildren(List<Child> newChildren) {
+    public void setNewChildren(List<ChildInput> newChildren) {
         this.newChildren = newChildren;
     }
 
-    public List<ChildUpdate> getChildrenUpdates() {
+    public List<ChildUpdateInput> getChildrenUpdates() {
         return childrenUpdates;
     }
 
-    public void setChildrenUpdates(List<ChildUpdate> childrenUpdates) {
+    public void setChildrenUpdates(List<ChildUpdateInput> childrenUpdates) {
         this.childrenUpdates = childrenUpdates;
     }
 }

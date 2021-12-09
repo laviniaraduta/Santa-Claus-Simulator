@@ -1,15 +1,15 @@
-package entities;
+package fileio;
 
 import enums.Category;
 
 import java.util.List;
 
-public class ChildUpdate {
+public class ChildUpdateInput {
     private Integer id;
     private Double niceScore;
     private List<Category> giftsPreferences;
 
-    public ChildUpdate() {
+    public ChildUpdateInput() {
 
     }
     public Integer getId() {

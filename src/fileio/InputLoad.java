@@ -1,7 +1,6 @@
 package fileio;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import entities.GameData;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,8 +12,8 @@ public class InputLoad {
         this.inputPath = inputPath;
     }
 
-    public GameData readInput() throws IOException {
+    public GameDataInput readInput() throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.readValue(new File(inputPath), GameData.class);
+        return objectMapper.readValue(new File(inputPath), GameDataInput.class);
     }
 }

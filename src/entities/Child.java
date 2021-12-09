@@ -2,36 +2,51 @@ package entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import enums.Category;
+import enums.ChildCategory;
 import enums.Cities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Child {
     private Integer id;
     private String lastName;
     private String firstName;
-    private Integer age;
     private Cities city;
-    private Double niceScore;
+    private Integer age;
+    private List<Category> giftsPreferences;
+    private Double averageScore;
+    private List<Double> niceScoreHistory = new ArrayList<Double>();
+    private Double assignedBudget;
+    private List<Gift> receivedGifts = new ArrayList<Gift>();
+    @JsonIgnore
+    private ChildCategory category;
 
-    public Child() {
-    }
-
-    public Child(Integer id, String lastName, String firstName,
-                 Integer age, Cities city, Double niceScore,
-                 List<Category> giftsPreferences) {
+    public Child(Integer id, String lastName, String firstName, Double niceScore,
+                 Integer age, Cities city, List<Category> giftsPreferences) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
         this.age = age;
         this.city = city;
-        this.niceScore = niceScore;
         this.giftsPreferences = giftsPreferences;
+        this.niceScoreHistory.add(niceScore);
+        this.setCategory();
     }
 
-    @JsonIgnore
-    private List<Double> niceScores;
-    private List<Category> giftsPreferences;
+    public Child(Child c) {
+        this.id = c.getId();
+        this.lastName = c.getLastName();
+        this.firstName = c.getFirstName();
+        this.age = c.getAge();
+        this.city = c.getCity();
+        this.giftsPreferences = c.getGiftsPreferences();
+        this.niceScoreHistory = c.getNiceScoreHistory();
+        this.category = c.getCategory();
+        this.receivedGifts = c.getReceivedGifts();
+        this.assignedBudget = c.getAssignedBudget();
+        this.averageScore = c.getAverageScore();
+    }
 
     public Integer getId() {
         return id;
@@ -73,20 +88,12 @@ public class Child {
         this.city = city;
     }
 
-    public Double getNiceScore() {
-        return niceScore;
+    public Double getAverageScore() {
+        return averageScore;
     }
 
-    public void setNiceScore(Double niceScore) {
-        this.niceScore = niceScore;
-    }
-
-    public List<Double> getNiceScores() {
-        return niceScores;
-    }
-
-    public void setNiceScores(List<Double> niceScores) {
-        this.niceScores = niceScores;
+    public void setAverageScore(Double averageScore) {
+        this.averageScore = averageScore;
     }
 
     public List<Category> getGiftsPreferences() {
@@ -95,5 +102,45 @@ public class Child {
 
     public void setGiftsPreferences(List<Category> giftsPreferences) {
         this.giftsPreferences = giftsPreferences;
+    }
+
+    public List<Double> getNiceScoreHistory() {
+        return niceScoreHistory;
+    }
+
+    public void setNiceScoreHistory(List<Double> niceScoreHistory) {
+        this.niceScoreHistory = niceScoreHistory;
+    }
+
+    public Double getAssignedBudget() {
+        return assignedBudget;
+    }
+
+    public void setAssignedBudget(Double assignedBudget) {
+        this.assignedBudget = assignedBudget;
+    }
+
+    public List<Gift> getReceivedGifts() {
+        return receivedGifts;
+    }
+
+    public void setReceivedGifts(List<Gift> receivedGifts) {
+        this.receivedGifts = receivedGifts;
+    }
+
+    public ChildCategory getCategory() {
+        return category;
+    }
+
+    public void setCategory() {
+        if (Integer.compare(this.age, 5) < 0) {
+            this.category = ChildCategory.BABY;
+        } else if (Integer.compare(this.age, 5) >= 0 && Integer.compare(this.age, 12) < 0) {
+            this.category = ChildCategory.KID;
+        } else if (Integer.compare(this.age, 12) >= 0 && Integer.compare(this.age, 18) < 0) {
+            this.category = ChildCategory.TEEN;
+        } else if (Integer.compare(this.age, 18) >= 0) {
+            this.category = ChildCategory.YOUNG_ADULT;
+        }
     }
 }

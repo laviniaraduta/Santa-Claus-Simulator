@@ -1,12 +1,12 @@
-package entities;
+package fileio;
 
 import java.util.List;
 
-public class GameData {
+public class GameDataInput {
     private Integer numberOfYears;
     private Double santaBudget;
-    private InitialData initialData;
-    private List<AnnualChange> annualChanges;
+    private InitialDataInput initialData;
+    private List<AnnualChangeInput> annualChanges;
 
     public Integer getNumberOfYears() {
         return numberOfYears;
@@ -24,19 +24,19 @@ public class GameData {
         this.santaBudget = santaBudget;
     }
 
-    public InitialData getInitialData() {
+    public InitialDataInput getInitialData() {
         return initialData;
     }
 
-    public void setInitialData(InitialData initialData) {
+    public void setInitialData(InitialDataInput initialData) {
         this.initialData = initialData;
     }
 
-    public List<AnnualChange> getAnnualChanges() {
+    public List<AnnualChangeInput> getAnnualChanges() {
         return annualChanges;
     }
 
-    public void setAnnualChanges(List<AnnualChange> annualChanges) {
+    public void setAnnualChanges(List<AnnualChangeInput> annualChanges) {
         this.annualChanges = annualChanges;
     }
 }
