@@ -10,7 +10,15 @@
       "averageScore" : 2.0,
       "niceScoreHistory" : [ 2.0 ],
       "assignedBudget" : 68.74285714285715,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Uno",
+        "price" : 10.0,
+        "category" : "Board Games"
+      }, {
+        "productName" : "Twilight",
+        "price" : 30.0,
+        "category" : "Books"
+      } ]
     }, {
       "id" : 1,
       "lastName" : "Ionescu",
@@ -21,7 +29,11 @@
       "averageScore" : 9.0,
       "niceScoreHistory" : [ 9.0 ],
       "assignedBudget" : 309.34285714285716,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
+      } ]
     }, {
       "id" : 2,
       "lastName" : "Cantemir",
@@ -32,7 +44,15 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 4.0 ],
       "assignedBudget" : 343.7142857142857,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
+      }, {
+        "productName" : "Bag of Candy",
+        "price" : 20.0,
+        "category" : "Sweets"
+      } ]
     }, {
       "id" : 3,
       "lastName" : "Pop",
@@ -43,7 +63,11 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0 ],
       "assignedBudget" : 343.7142857142857,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Teddy Bear",
+        "price" : 5.0,
+        "category" : "Toys"
+      } ]
     }, {
       "id" : 4,
       "lastName" : "Pop",
@@ -54,7 +78,15 @@
       "averageScore" : 4.0,
       "niceScoreHistory" : [ 4.0 ],
       "assignedBudget" : 137.4857142857143,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
+      }, {
+        "productName" : "Bag of Candy",
+        "price" : 20.0,
+        "category" : "Sweets"
+      } ]
     } ]
   }, {
     "children" : [ {
@@ -67,7 +99,15 @@
       "averageScore" : 3.3333333333333335,
       "niceScoreHistory" : [ 2.0, 4.0 ],
       "assignedBudget" : 94.3529411764706,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Uno",
+        "price" : 10.0,
+        "category" : "Board Games"
+      }, {
+        "productName" : "Twilight",
+        "price" : 30.0,
+        "category" : "Books"
+      } ]
     }, {
       "id" : 1,
       "lastName" : "Ionescu",
@@ -78,7 +118,11 @@
       "averageScore" : 9.0,
       "niceScoreHistory" : [ 9.0 ],
       "assignedBudget" : 254.75294117647059,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
+      } ]
     }, {
       "id" : 2,
       "lastName" : "Cantemir",
@@ -89,7 +133,15 @@
       "averageScore" : 6.0,
       "niceScoreHistory" : [ 4.0, 8.0 ],
       "assignedBudget" : 169.83529411764704,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
+      }, {
+        "productName" : "Bag of Candy",
+        "price" : 20.0,
+        "category" : "Sweets"
+      } ]
     }, {
       "id" : 3,
       "lastName" : "Pop",
@@ -100,7 +152,11 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0 ],
       "assignedBudget" : 283.05882352941177,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Teddy Bear",
+        "price" : 5.0,
+        "category" : "Toys"
+      } ]
     } ]
   }, {
     "children" : [ {
@@ -113,7 +169,15 @@
       "averageScore" : 3.3333333333333335,
       "niceScoreHistory" : [ 2.0, 4.0 ],
       "assignedBudget" : 136.70454545454544,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Uno",
+        "price" : 10.0,
+        "category" : "Board Games"
+      }, {
+        "productName" : "Twilight",
+        "price" : 30.0,
+        "category" : "Books"
+      } ]
     }, {
       "id" : 2,
       "lastName" : "Cantemir",
@@ -124,7 +188,15 @@
       "averageScore" : 6.0,
       "niceScoreHistory" : [ 4.0, 8.0 ],
       "assignedBudget" : 246.0681818181818,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
+      }, {
+        "productName" : "Bag of Candy",
+        "price" : 20.0,
+        "category" : "Sweets"
+      } ]
     }, {
       "id" : 3,
       "lastName" : "Pop",
@@ -135,7 +207,11 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0 ],
       "assignedBudget" : 410.1136363636363,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Teddy Bear",
+        "price" : 5.0,
+        "category" : "Toys"
+      } ]
     }, {
       "id" : 6,
       "lastName" : "Popescu",
@@ -146,7 +222,11 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0 ],
       "assignedBudget" : 410.1136363636363,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
+      } ]
     } ]
   }, {
     "children" : [ {
@@ -159,7 +239,15 @@
       "averageScore" : 3.3333333333333335,
       "niceScoreHistory" : [ 2.0, 4.0 ],
       "assignedBudget" : 136.70454545454544,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Uno",
+        "price" : 10.0,
+        "category" : "Board Games"
+      }, {
+        "productName" : "Twilight",
+        "price" : 30.0,
+        "category" : "Books"
+      } ]
     }, {
       "id" : 2,
       "lastName" : "Cantemir",
@@ -170,7 +258,15 @@
       "averageScore" : 6.0,
       "niceScoreHistory" : [ 4.0, 8.0 ],
       "assignedBudget" : 246.0681818181818,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
+      }, {
+        "productName" : "Bag of Candy",
+        "price" : 20.0,
+        "category" : "Sweets"
+      } ]
     }, {
       "id" : 3,
       "lastName" : "Pop",
@@ -181,7 +277,11 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0 ],
       "assignedBudget" : 410.1136363636363,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Teddy Bear",
+        "price" : 5.0,
+        "category" : "Toys"
+      } ]
     }, {
       "id" : 6,
       "lastName" : "Popescu",
@@ -192,7 +292,19 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0 ],
       "assignedBudget" : 410.1136363636363,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Bag of Candy",
+        "price" : 20.0,
+        "category" : "Sweets"
+      }, {
+        "productName" : "Teddy Bear",
+        "price" : 5.0,
+        "category" : "Toys"
+      }, {
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
+      } ]
     } ]
   }, {
     "children" : [ {
@@ -205,7 +317,15 @@
       "averageScore" : 3.3333333333333335,
       "niceScoreHistory" : [ 2.0, 4.0 ],
       "assignedBudget" : 101.94915254237287,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Uno",
+        "price" : 10.0,
+        "category" : "Board Games"
+      }, {
+        "productName" : "Twilight",
+        "price" : 30.0,
+        "category" : "Books"
+      } ]
     }, {
       "id" : 2,
       "lastName" : "Cantemir",
@@ -216,7 +336,15 @@
       "averageScore" : 6.0,
       "niceScoreHistory" : [ 4.0, 8.0 ],
       "assignedBudget" : 183.50847457627117,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
+      }, {
+        "productName" : "Bag of Candy",
+        "price" : 20.0,
+        "category" : "Sweets"
+      } ]
     }, {
       "id" : 3,
       "lastName" : "Pop",
@@ -227,7 +355,11 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0 ],
       "assignedBudget" : 305.8474576271186,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Teddy Bear",
+        "price" : 5.0,
+        "category" : "Toys"
+      } ]
     }, {
       "id" : 6,
       "lastName" : "Popescu",
@@ -238,7 +370,19 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0 ],
       "assignedBudget" : 305.8474576271186,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Bag of Candy",
+        "price" : 20.0,
+        "category" : "Sweets"
+      }, {
+        "productName" : "Teddy Bear",
+        "price" : 5.0,
+        "category" : "Toys"
+      }, {
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
+      } ]
     }, {
       "id" : 7,
       "lastName" : "Mihalache",
@@ -249,7 +393,23 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 3.0 ],
       "assignedBudget" : 305.8474576271186,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
+      }, {
+        "productName" : "Bag of Candy",
+        "price" : 20.0,
+        "category" : "Sweets"
+      }, {
+        "productName" : "Teddy Bear",
+        "price" : 5.0,
+        "category" : "Toys"
+      }, {
+        "productName" : "Twilight",
+        "price" : 30.0,
+        "category" : "Books"
+      } ]
     } ]
   }, {
     "children" : [ {
@@ -262,7 +422,15 @@
       "averageScore" : 3.3333333333333335,
       "niceScoreHistory" : [ 2.0, 4.0 ],
       "assignedBudget" : 81.28378378378378,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Uno",
+        "price" : 10.0,
+        "category" : "Board Games"
+      }, {
+        "productName" : "Twilight",
+        "price" : 30.0,
+        "category" : "Books"
+      } ]
     }, {
       "id" : 2,
       "lastName" : "Cantemir",
@@ -273,7 +441,15 @@
       "averageScore" : 6.0,
       "niceScoreHistory" : [ 4.0, 8.0 ],
       "assignedBudget" : 146.3108108108108,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
+      }, {
+        "productName" : "Bag of Candy",
+        "price" : 20.0,
+        "category" : "Sweets"
+      } ]
     }, {
       "id" : 3,
       "lastName" : "Pop",
@@ -284,7 +460,11 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0 ],
       "assignedBudget" : 243.85135135135133,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Teddy Bear",
+        "price" : 5.0,
+        "category" : "Toys"
+      } ]
     }, {
       "id" : 6,
       "lastName" : "Popescu",
@@ -295,7 +475,19 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0 ],
       "assignedBudget" : 243.85135135135133,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Bag of Candy",
+        "price" : 20.0,
+        "category" : "Sweets"
+      }, {
+        "productName" : "Teddy Bear",
+        "price" : 5.0,
+        "category" : "Toys"
+      }, {
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
+      } ]
     }, {
       "id" : 7,
       "lastName" : "Mihalache",
@@ -306,7 +498,23 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 3.0 ],
       "assignedBudget" : 243.85135135135133,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
+      }, {
+        "productName" : "Bag of Candy",
+        "price" : 20.0,
+        "category" : "Sweets"
+      }, {
+        "productName" : "Teddy Bear",
+        "price" : 5.0,
+        "category" : "Toys"
+      }, {
+        "productName" : "Twilight",
+        "price" : 30.0,
+        "category" : "Books"
+      } ]
     }, {
       "id" : 8,
       "lastName" : "Cantemir",
@@ -317,7 +525,11 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 4.0 ],
       "assignedBudget" : 243.85135135135133,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Dress",
+        "price" : 45.0,
+        "category" : "Clothes"
+      } ]
     } ]
   } ]
 }

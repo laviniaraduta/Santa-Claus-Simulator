@@ -25,6 +25,9 @@ public class Simulation {
         childrenDatabase.applyScoreStrategy();
         childrenDatabase.setAverageScoresSum();
         childrenDatabase.applyAssignedBudgetStrategy(game.getSantaBudget());
+        childrenDatabase.applyReceiveGiftsStrategy(giftsDatabase);
+
+
         Output output = new Output();
         output.addDatabase(childrenDatabase);
 
@@ -33,7 +36,7 @@ public class Simulation {
             for (GiftInput gift : annualChangeList.get(round).getNewGifts()) {
                 giftsDatabase.addGift(gift);
             }
-            childrenDatabase.update(annualChangeList.get(round));
+            childrenDatabase.update(annualChangeList.get(round), giftsDatabase);
             round++;
             output.addDatabase(childrenDatabase);
         }

@@ -12,6 +12,7 @@ import strategies.age.DeleteYoungAdultsStrategy;
 import strategies.age.IncreaseAgeStrategy;
 import strategies.budget.AssignedBudgetStrategy;
 import strategies.gift.GiftPreferencesStrategy;
+import strategies.gift.ReceiveGiftsStrategy;
 import strategies.score.BabyAverageScore;
 import strategies.score.KidAverageScore;
 import strategies.score.TeenAverageScore;
@@ -88,6 +89,13 @@ public class ChildrenDatabase {
         }
     }
 
+    public void applyReceiveGiftsStrategy(GiftsDatabase gifts) {
+        ReceiveGiftsStrategy strategy = new ReceiveGiftsStrategy();
+        for (Child child : this.children) {
+            strategy.receiveGifts(child, gifts);
+        }
+    }
+
     public Child findChildById(Integer id) {
         for (Child child : this.children) {
             if (child.getId().equals(id)) {
@@ -97,7 +105,7 @@ public class ChildrenDatabase {
         return null;
     }
 
-    public void update(AnnualChange change) {
+    public void update(AnnualChange change, GiftsDatabase gifts) {
         this.applyIncreaseAgeStrategy();
         for (ChildInput child : change.getNewChildren()) {
             this.addChild(child);
@@ -117,5 +125,6 @@ public class ChildrenDatabase {
         this.applyScoreStrategy();
         this.setAverageScoresSum();
         this.applyAssignedBudgetStrategy(change.getNewSantaBudget());
+        this.applyReceiveGiftsStrategy(gifts);
     }
 }

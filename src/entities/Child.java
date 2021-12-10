@@ -48,7 +48,8 @@ public class Child {
         this.giftsPreferences.addAll(c.getGiftsPreferences());
         this.niceScoreHistory.addAll(c.getNiceScoreHistory());
         this.category = c.getCategory();
-        this.receivedGifts = c.getReceivedGifts();
+        this.receivedGifts = new ArrayList<Gift>();
+        this.receivedGifts.addAll(c.getReceivedGifts());
         this.assignedBudget = c.getAssignedBudget();
         this.averageScore = c.getAverageScore();
     }

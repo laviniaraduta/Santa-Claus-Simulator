@@ -56,12 +56,6 @@ public final class Main {
 
 //            InputLoad inputLoader = new InputLoad("tests\\test23.json");
 //            GameDataInput game = inputLoader.readInput();
-////            String filepath = Constants.OUT_PATH + file.getName();
-////            File out = new File(filepath);
-////            boolean isCreated = out.createNewFile();
-////            if (isCreated) {
-////                System.out.println("created");
-////            }
 //            Output output = Simulation.applyRound(game);
 //            Writer writer = new Writer("output\\out_test23.json");
 //            writer.writeToFile(output);

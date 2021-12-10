@@ -10,7 +10,11 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 3.0 ],
       "assignedBudget" : 75.625,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Harry Potter",
+        "price" : 35.0,
+        "category" : "Books"
+      } ]
     }, {
       "id" : 1,
       "lastName" : "Stoica",
@@ -21,7 +25,11 @@
       "averageScore" : 2.0,
       "niceScoreHistory" : [ 2.0 ],
       "assignedBudget" : 15.125,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Doll",
+        "price" : 10.0,
+        "category" : "Toys"
+      } ]
     }, {
       "id" : 2,
       "lastName" : "Pop",
@@ -32,7 +40,11 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0 ],
       "assignedBudget" : 75.625,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Doll",
+        "price" : 10.0,
+        "category" : "Toys"
+      } ]
     }, {
       "id" : 3,
       "lastName" : "Pop",
@@ -43,7 +55,11 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 2.0 ],
       "assignedBudget" : 75.625,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Doll",
+        "price" : 10.0,
+        "category" : "Toys"
+      } ]
     } ]
   }, {
     "children" : [ {
@@ -56,7 +72,11 @@
       "averageScore" : 5.0,
       "niceScoreHistory" : [ 3.0, 7.0 ],
       "assignedBudget" : 40.78651685393258,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Harry Potter",
+        "price" : 35.0,
+        "category" : "Books"
+      } ]
     }, {
       "id" : 1,
       "lastName" : "Stoica",
@@ -67,7 +87,11 @@
       "averageScore" : 4.666666666666667,
       "niceScoreHistory" : [ 2.0, 6.0 ],
       "assignedBudget" : 38.06741573033708,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Doll",
+        "price" : 10.0,
+        "category" : "Toys"
+      } ]
     }, {
       "id" : 2,
       "lastName" : "Pop",
@@ -78,7 +102,11 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0, 10.0 ],
       "assignedBudget" : 81.57303370786516,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Doll",
+        "price" : 10.0,
+        "category" : "Toys"
+      } ]
     }, {
       "id" : 3,
       "lastName" : "Pop",
@@ -89,7 +117,11 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 2.0, 8.0 ],
       "assignedBudget" : 81.57303370786516,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Doll",
+        "price" : 10.0,
+        "category" : "Toys"
+      } ]
     } ]
   }, {
     "children" : [ {
@@ -113,7 +145,11 @@
       "averageScore" : 4.666666666666667,
       "niceScoreHistory" : [ 2.0, 6.0 ],
       "assignedBudget" : 31.46067415730337,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Doll",
+        "price" : 10.0,
+        "category" : "Toys"
+      } ]
     }, {
       "id" : 2,
       "lastName" : "Pop",
@@ -124,7 +160,11 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0, 10.0 ],
       "assignedBudget" : 67.41573033707864,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Doll",
+        "price" : 10.0,
+        "category" : "Toys"
+      } ]
     }, {
       "id" : 3,
       "lastName" : "Pop",
@@ -135,7 +175,11 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 2.0, 8.0 ],
       "assignedBudget" : 67.41573033707864,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Doll",
+        "price" : 10.0,
+        "category" : "Toys"
+      } ]
     } ]
   }, {
     "children" : [ {
@@ -148,7 +192,11 @@
       "averageScore" : 5.0,
       "niceScoreHistory" : [ 3.0, 7.0 ],
       "assignedBudget" : 83.51351351351352,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Harry Potter",
+        "price" : 35.0,
+        "category" : "Books"
+      } ]
     }, {
       "id" : 1,
       "lastName" : "Stoica",
@@ -159,7 +207,11 @@
       "averageScore" : 4.666666666666667,
       "niceScoreHistory" : [ 2.0, 6.0 ],
       "assignedBudget" : 77.94594594594595,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Doll",
+        "price" : 10.0,
+        "category" : "Toys"
+      } ]
     }, {
       "id" : 2,
       "lastName" : "Pop",
@@ -170,7 +222,11 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0, 10.0 ],
       "assignedBudget" : 167.02702702702703,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Doll",
+        "price" : 10.0,
+        "category" : "Toys"
+      } ]
     }, {
       "id" : 3,
       "lastName" : "Pop",
@@ -181,7 +237,11 @@
       "averageScore" : 5.0,
       "niceScoreHistory" : [ 2.0, 8.0 ],
       "assignedBudget" : 83.51351351351352,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Doll",
+        "price" : 10.0,
+        "category" : "Toys"
+      } ]
     } ]
   }, {
     "children" : [ {
@@ -194,7 +254,11 @@
       "averageScore" : 5.0,
       "niceScoreHistory" : [ 3.0, 7.0 ],
       "assignedBudget" : 76.21621621621621,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Harry Potter",
+        "price" : 35.0,
+        "category" : "Books"
+      } ]
     }, {
       "id" : 1,
       "lastName" : "Stoica",
@@ -205,7 +269,11 @@
       "averageScore" : 4.666666666666667,
       "niceScoreHistory" : [ 2.0, 6.0 ],
       "assignedBudget" : 71.13513513513513,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Doll",
+        "price" : 10.0,
+        "category" : "Toys"
+      } ]
     }, {
       "id" : 2,
       "lastName" : "Pop",
@@ -216,7 +284,11 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0, 10.0 ],
       "assignedBudget" : 152.43243243243242,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Doll",
+        "price" : 10.0,
+        "category" : "Toys"
+      } ]
     }, {
       "id" : 3,
       "lastName" : "Pop",
@@ -227,7 +299,11 @@
       "averageScore" : 5.0,
       "niceScoreHistory" : [ 2.0, 8.0 ],
       "assignedBudget" : 76.21621621621621,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Doll",
+        "price" : 10.0,
+        "category" : "Toys"
+      } ]
     } ]
   }, {
     "children" : [ {
@@ -240,7 +316,11 @@
       "averageScore" : 5.0,
       "niceScoreHistory" : [ 3.0, 7.0 ],
       "assignedBudget" : 48.648648648648646,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Harry Potter",
+        "price" : 35.0,
+        "category" : "Books"
+      } ]
     }, {
       "id" : 1,
       "lastName" : "Stoica",
@@ -251,7 +331,11 @@
       "averageScore" : 4.666666666666667,
       "niceScoreHistory" : [ 2.0, 6.0 ],
       "assignedBudget" : 45.40540540540541,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Doll",
+        "price" : 10.0,
+        "category" : "Toys"
+      } ]
     }, {
       "id" : 2,
       "lastName" : "Pop",
@@ -262,7 +346,11 @@
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 10.0, 10.0 ],
       "assignedBudget" : 97.29729729729729,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Doll",
+        "price" : 10.0,
+        "category" : "Toys"
+      } ]
     }, {
       "id" : 3,
       "lastName" : "Pop",
@@ -273,7 +361,11 @@
       "averageScore" : 5.0,
       "niceScoreHistory" : [ 2.0, 8.0 ],
       "assignedBudget" : 48.648648648648646,
-      "receivedGifts" : [ ]
+      "receivedGifts" : [ {
+        "productName" : "Doll",
+        "price" : 10.0,
+        "category" : "Toys"
+      } ]
     } ]
   } ]
 }
