@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import enums.Category;
 import enums.ChildCategory;
 import enums.Cities;
+import strategies.gift.GiftPreferencesStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +23,9 @@ public class Child {
     @JsonIgnore
     private ChildCategory category;
 
+    public Child() {
+
+    }
     public Child(Integer id, String lastName, String firstName, Double niceScore,
                  Integer age, Cities city, List<Category> giftsPreferences) {
         this.id = id;
@@ -40,8 +44,9 @@ public class Child {
         this.firstName = c.getFirstName();
         this.age = c.getAge();
         this.city = c.getCity();
-        this.giftsPreferences = c.getGiftsPreferences();
-        this.niceScoreHistory = c.getNiceScoreHistory();
+        this.giftsPreferences = new ArrayList<Category>();
+        this.giftsPreferences.addAll(c.getGiftsPreferences());
+        this.niceScoreHistory.addAll(c.getNiceScoreHistory());
         this.category = c.getCategory();
         this.receivedGifts = c.getReceivedGifts();
         this.assignedBudget = c.getAssignedBudget();
@@ -137,10 +142,19 @@ public class Child {
             this.category = ChildCategory.BABY;
         } else if (Integer.compare(this.age, 5) >= 0 && Integer.compare(this.age, 12) < 0) {
             this.category = ChildCategory.KID;
-        } else if (Integer.compare(this.age, 12) >= 0 && Integer.compare(this.age, 18) < 0) {
+        } else if (Integer.compare(this.age, 12) >= 0 && Integer.compare(this.age, 18) <= 0) {
             this.category = ChildCategory.TEEN;
-        } else if (Integer.compare(this.age, 18) >= 0) {
+        } else if (Integer.compare(this.age, 18) > 0) {
             this.category = ChildCategory.YOUNG_ADULT;
         }
+    }
+
+    public void addScore(Double score) {
+        this.niceScoreHistory.add(score);
+    }
+
+    public void applyGiftPreferencesStrategy(List<Category> preferences) {
+        GiftPreferencesStrategy strategy = new GiftPreferencesStrategy();
+        strategy.addPreferences(this, preferences);
     }
 }

@@ -54,6 +54,18 @@ public final class Main {
             writer.writeToFile(output);
         }
 
+//            InputLoad inputLoader = new InputLoad("tests\\test23.json");
+//            GameDataInput game = inputLoader.readInput();
+////            String filepath = Constants.OUT_PATH + file.getName();
+////            File out = new File(filepath);
+////            boolean isCreated = out.createNewFile();
+////            if (isCreated) {
+////                System.out.println("created");
+////            }
+//            Output output = Simulation.applyRound(game);
+//            Writer writer = new Writer("output\\out_test23.json");
+//            writer.writeToFile(output);
+
 
 //        checker.iterateFiles(Constants.RESULT_PATH, Constants.REF_PATH, Constants.TESTS_PATH);
 //        Checkstyle test = new Checkstyle();

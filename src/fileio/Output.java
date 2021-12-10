@@ -4,6 +4,7 @@ import databases.ChildrenDatabase;
 import entities.Child;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Output {
@@ -22,7 +23,7 @@ public class Output {
         for (Child child : database.getChildren()) {
             copy.add(new Child(child));
         }
-        ChildrenDatabase cd = new ChildrenDatabase(copy);
+        ChildrenDatabase cd = new ChildrenDatabase(Collections.unmodifiableList(copy));
         this.annualChildren.add(cd);
     }
 }

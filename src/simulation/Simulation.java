@@ -29,13 +29,13 @@ public class Simulation {
         output.addDatabase(childrenDatabase);
 
         while (round < game.getNumberOfYears()) {
-            for (ChildInput child : annualChangeList.get(round).getNewChildren()) {
-                childrenDatabase.addChild(child);
-            }
+            game.setSantaBudget(annualChangeList.get(round).getNewSantaBudget());
             for (GiftInput gift : annualChangeList.get(round).getNewGifts()) {
                 giftsDatabase.addGift(gift);
             }
+            childrenDatabase.update(annualChangeList.get(round));
             round++;
+            output.addDatabase(childrenDatabase);
         }
         Database.getDatabase().clearDatabase();
         return output;

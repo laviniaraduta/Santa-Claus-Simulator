@@ -1,12 +1,17 @@
 package databases;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import entities.AnnualChange;
 import entities.Child;
 import entities.ChildrenFactory;
+import enums.Category;
 import enums.ChildCategory;
 import fileio.ChildInput;
+import fileio.ChildUpdateInput;
 import strategies.age.DeleteYoungAdultsStrategy;
+import strategies.age.IncreaseAgeStrategy;
 import strategies.budget.AssignedBudgetStrategy;
+import strategies.gift.GiftPreferencesStrategy;
 import strategies.score.BabyAverageScore;
 import strategies.score.KidAverageScore;
 import strategies.score.TeenAverageScore;
@@ -65,8 +70,8 @@ public class ChildrenDatabase {
     }
 
     public void applyAssignedBudgetStrategy(Double totalBudget) {
+        AssignedBudgetStrategy strategy = new AssignedBudgetStrategy();
         for (Child child : this.children) {
-            AssignedBudgetStrategy strategy = new AssignedBudgetStrategy();
             strategy.computeAssignedBudget(child, totalBudget, this.averageScoresSum);
         }
     }
@@ -74,5 +79,43 @@ public class ChildrenDatabase {
     public void applyDeleteYoungAdultsStrategy() {
         DeleteYoungAdultsStrategy strategy = new DeleteYoungAdultsStrategy();
         strategy.deleteYoungAdults(this.children);
+    }
+
+    public void applyIncreaseAgeStrategy() {
+        IncreaseAgeStrategy strategy = new IncreaseAgeStrategy();
+        for (Child child : this.children) {
+            strategy.computeNewAge(child);
+        }
+    }
+
+    public Child findChildById(Integer id) {
+        for (Child child : this.children) {
+            if (child.getId().equals(id)) {
+                return child;
+            }
+        }
+        return null;
+    }
+
+    public void update(AnnualChange change) {
+        this.applyIncreaseAgeStrategy();
+        for (ChildInput child : change.getNewChildren()) {
+            this.addChild(child);
+        }
+        this.applyDeleteYoungAdultsStrategy();
+        for (ChildUpdateInput childUpdate : change.getChildrenUpdates()) {
+            Child foundChild = findChildById(childUpdate.getId());
+            if (foundChild != null) {
+                if (childUpdate.getNiceScore() != null) {
+                    foundChild.addScore(childUpdate.getNiceScore());
+                }
+                if (!childUpdate.getGiftsPreferences().isEmpty()) {
+                    foundChild.applyGiftPreferencesStrategy(childUpdate.getGiftsPreferences());
+                }
+            }
+        }
+        this.applyScoreStrategy();
+        this.setAverageScoresSum();
+        this.applyAssignedBudgetStrategy(change.getNewSantaBudget());
     }
 }

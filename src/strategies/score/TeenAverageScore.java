@@ -10,19 +10,11 @@ import java.util.stream.Collectors;
 public class TeenAverageScore extends AverageScoreStrategy {
     @Override
     public void computeAverageScore(Child child) {
-        Map<Double, Long> frequencyMap = child.getNiceScoreHistory().stream()
-                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-        Double weightedAverage = (Double) calculateWeightedAverage(frequencyMap);
-        child.setAverageScore(weightedAverage);
-    }
-
-    static Double calculateWeightedAverage(Map<Double, Long> map) throws ArithmeticException {
-        Double num = 0d;
-        Double denom = 0d;
-        for (Map.Entry<Double, Long> entry : map.entrySet()) {
-            num += entry.getKey() * entry.getValue();
-            denom += entry.getValue();
+        Double sum = 0d;
+        int n = child.getNiceScoreHistory().size();
+        for (int i = 0 ; i < child.getNiceScoreHistory().size(); i++) {
+            sum += (Double) child.getNiceScoreHistory().get(i) * (i + 1);
         }
-        return (Double) num / denom;
+        child.setAverageScore((Double) (2 * sum) / (n * (n + 1)));
     }
 }
