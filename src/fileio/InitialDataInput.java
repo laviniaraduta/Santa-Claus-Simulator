@@ -2,7 +2,7 @@ package fileio;
 
 import java.util.List;
 
-public class InitialDataInput {
+public final class InitialDataInput {
     private List<ChildInput> children;
     private List<GiftInput> santaGiftsList;
 
@@ -13,7 +13,7 @@ public class InitialDataInput {
         return children;
     }
 
-    public void setChildren(List<ChildInput> children) {
+    public void setChildren(final List<ChildInput> children) {
         this.children = children;
     }
 
@@ -21,7 +21,7 @@ public class InitialDataInput {
         return santaGiftsList;
     }
 
-    public void setSantaGiftsList(List<GiftInput> santaGiftsList) {
+    public void setSantaGiftsList(final List<GiftInput> santaGiftsList) {
         this.santaGiftsList = santaGiftsList;
     }
 }

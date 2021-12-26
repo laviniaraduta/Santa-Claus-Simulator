@@ -2,7 +2,7 @@ package fileio;
 
 import java.util.List;
 
-public class GameDataInput {
+public final class GameDataInput {
     private Integer numberOfYears;
     private Double santaBudget;
     private InitialDataInput initialData;
@@ -12,7 +12,7 @@ public class GameDataInput {
         return numberOfYears;
     }
 
-    public void setNumberOfYears(Integer numberOfYears) {
+    public void setNumberOfYears(final Integer numberOfYears) {
         this.numberOfYears = numberOfYears;
     }
 
@@ -20,7 +20,7 @@ public class GameDataInput {
         return santaBudget;
     }
 
-    public void setSantaBudget(Double santaBudget) {
+    public void setSantaBudget(final Double santaBudget) {
         this.santaBudget = santaBudget;
     }
 
@@ -28,7 +28,7 @@ public class GameDataInput {
         return initialData;
     }
 
-    public void setInitialData(InitialDataInput initialData) {
+    public void setInitialData(final InitialDataInput initialData) {
         this.initialData = initialData;
     }
 
@@ -36,7 +36,7 @@ public class GameDataInput {
         return annualChanges;
     }
 
-    public void setAnnualChanges(List<AnnualChangeInput> annualChanges) {
+    public void setAnnualChanges(final List<AnnualChangeInput> annualChanges) {
         this.annualChanges = annualChanges;
     }
 }

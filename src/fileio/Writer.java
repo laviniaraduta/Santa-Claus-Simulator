@@ -12,11 +12,16 @@ import java.io.IOException;
 public class Writer {
     private String outputPath;
 
-    public Writer(String outputPath) {
+    public Writer(final String outputPath) {
         this.outputPath = outputPath;
     }
 
-    public void writeToFile(Output output) throws IOException {
+    /**
+     * Write in the output JSON file the output object
+     * @param output the object that needs to be written
+     * @throws IOException
+     */
+    public void writeToFile(final Output output) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.NONE);
         objectMapper.setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY);

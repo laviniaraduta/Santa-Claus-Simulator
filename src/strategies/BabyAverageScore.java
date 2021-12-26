@@ -2,9 +2,11 @@ package strategies;
 
 import entities.Child;
 
-public class BabyAverageScore extends AverageScoreStrategy {
+import static common.Constants.PERFECT_NICE_SCORE;
+
+public final class BabyAverageScore extends AverageScoreStrategy {
     @Override
-    public void computeAverageScore(Child child) {
-        child.setAverageScore(10d);
+    public void computeAverageScore(final Child child) {
+        child.setAverageScore(PERFECT_NICE_SCORE);
     }
 }

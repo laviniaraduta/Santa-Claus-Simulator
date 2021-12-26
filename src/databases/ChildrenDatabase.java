@@ -1,7 +1,11 @@
 package databases;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import commands.*;
+import commands.Command;
+import commands.AssignBudgetCommand;
+import commands.DeleteYoungAdultsCommand;
+import commands.IncreaseAgeCommand;
+import commands.ReceiveGiftsCommand;
 import entities.AnnualChange;
 import entities.Child;
 import entities.ChildrenFactory;
@@ -13,23 +17,26 @@ import strategies.AverageScoreStrategy;
 
 import java.util.List;
 
-public class ChildrenDatabase {
+public final class ChildrenDatabase {
     private List<Child> children;
     @JsonIgnore
     private Double averageScoresSum;
 
-    public ChildrenDatabase(List<Child> childrenList) {
+    public ChildrenDatabase(final List<Child> childrenList) {
         this.children = childrenList;
     }
-
     public List<Child> getChildren() {
         return children;
     }
-
-    public void setChildren(List<Child> childrenList) {
+    public void setChildren(final List<Child> childrenList) {
         this.children = childrenList;
     }
-    public void addChild(ChildInput childInput) {
+
+    /**
+     * Add a child to the list
+     * @param childInput the input data of the new child
+     */
+    public void addChild(final ChildInput childInput) {
         Child newChild = ChildrenFactory.createChild(childInput);
         this.children.add(newChild);
     }
@@ -38,6 +45,9 @@ public class ChildrenDatabase {
         return averageScoresSum;
     }
 
+    /**
+     * Calculate the sum of all the nice scores of the children in list
+     */
     public void setAverageScoresSum() {
         Double sum = 0d;
         for (Child child : this.children) {
@@ -48,10 +58,15 @@ public class ChildrenDatabase {
         this.averageScoresSum = sum;
     }
 
+
+    /**
+     * Calculate the average nice score for each child, according to their category
+     */
     public void applyScoreStrategy() {
         for (Child child : this.children) {
             if (child.getCategory().equals(ChildCategory.KID)) {
-                AverageScoreStrategy kidAverageScore = StrategyFactory.createStrategy(StrategyFactory.StrategyType.KID_SCORE);
+                AverageScoreStrategy kidAverageScore = StrategyFactory
+                        .createStrategy(StrategyFactory.StrategyType.KID_SCORE);
                 kidAverageScore.computeAverageScore(child);
             } else if (child.getCategory().equals(ChildCategory.BABY)) {
                 AverageScoreStrategy babyAverageScore = StrategyFactory
@@ -65,11 +80,20 @@ public class ChildrenDatabase {
         }
     }
 
-    public void applyCommand(Command command) {
+    /**
+     * Apply the command (budget/age/gifts)
+     * @param command command that needs to be executed
+     */
+    public void applyCommand(final Command command) {
         command.execute();
     }
 
-    public Child findChildById(Integer id) {
+    /**
+     * Find the child that has the id given in the database
+     * @param id the id given
+     * @return the child that has that id
+     */
+    public Child findChildById(final Integer id) {
         for (Child child : this.children) {
             if (child.getId().equals(id)) {
                 return child;
@@ -78,12 +102,19 @@ public class ChildrenDatabase {
         return null;
     }
 
-    public void update(AnnualChange change, GiftsDatabase gifts) {
+    /**
+     * Update the children database every year according to the year's changes
+     * add new children (if there ar new ones), update children attributes,
+     * @param change the changes made in the current year
+     * @param gifts the gifts database for the current year
+     */
+    public void update(final AnnualChange change, final GiftsDatabase gifts) {
         this.applyCommand(new IncreaseAgeCommand(this.children));
         for (ChildInput child : change.getNewChildren()) {
             this.addChild(child);
         }
         this.applyCommand(new DeleteYoungAdultsCommand(this.children));
+        // update every child's attributes
         for (ChildUpdateInput childUpdate : change.getChildrenUpdates()) {
             Child foundChild = findChildById(childUpdate.getId());
             if (foundChild != null) {
@@ -91,13 +122,14 @@ public class ChildrenDatabase {
                     foundChild.addScore(childUpdate.getNiceScore());
                 }
                 if (!childUpdate.getGiftsPreferences().isEmpty()) {
-                    foundChild.applyGiftPreferencesStrategy(childUpdate.getGiftsPreferences());
+                    foundChild.applyGiftPreferencesCommand(childUpdate.getGiftsPreferences());
                 }
             }
         }
         this.applyScoreStrategy();
         this.setAverageScoresSum();
-        this.applyCommand(new AsignBudgetCommand(this.children, change.getNewSantaBudget(), this.getAverageScoresSum()));
+        this.applyCommand(new AssignBudgetCommand(this.children,
+                change.getNewSantaBudget(), this.getAverageScoresSum()));
         this.applyCommand(new ReceiveGiftsCommand(this.children, gifts));
     }
 }

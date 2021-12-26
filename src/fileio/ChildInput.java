@@ -1,12 +1,11 @@
 package fileio;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import enums.Category;
 import enums.Cities;
 
 import java.util.List;
 
-public class ChildInput {
+public final class ChildInput {
     private Integer id;
     private String lastName;
     private String firstName;
@@ -19,7 +18,7 @@ public class ChildInput {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(final Integer id) {
         this.id = id;
     }
 
@@ -27,7 +26,7 @@ public class ChildInput {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(final String lastName) {
         this.lastName = lastName;
     }
 
@@ -35,7 +34,7 @@ public class ChildInput {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(final String firstName) {
         this.firstName = firstName;
     }
 
@@ -43,7 +42,7 @@ public class ChildInput {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(final Integer age) {
         this.age = age;
     }
 
@@ -51,7 +50,7 @@ public class ChildInput {
         return city;
     }
 
-    public void setCity(Cities city) {
+    public void setCity(final Cities city) {
         this.city = city;
     }
 
@@ -59,7 +58,7 @@ public class ChildInput {
         return niceScore;
     }
 
-    public void setNiceScore(Double niceScore) {
+    public void setNiceScore(final Double niceScore) {
         this.niceScore = niceScore;
     }
 
@@ -67,7 +66,7 @@ public class ChildInput {
         return giftsPreferences;
     }
 
-    public void setGiftsPreferences(List<Category> giftsPreferences) {
+    public void setGiftsPreferences(final List<Category> giftsPreferences) {
         this.giftsPreferences = giftsPreferences;
     }
 }

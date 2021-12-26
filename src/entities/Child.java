@@ -9,7 +9,11 @@ import enums.Cities;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Child {
+import static common.Constants.MAX_BABY;
+import static common.Constants.MAX_KID;
+import static common.Constants.MAX_TEEN;
+
+public final class Child {
     private Integer id;
     private String lastName;
     private String firstName;
@@ -26,8 +30,9 @@ public class Child {
     public Child() {
 
     }
-    public Child(Integer id, String lastName, String firstName, Double niceScore,
-                 Integer age, Cities city, List<Category> giftsPreferences) {
+    public Child(final Integer id, final String lastName, final String firstName,
+                 final Double niceScore, final Integer age, final Cities city,
+                 final List<Category> giftsPreferences) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -38,7 +43,8 @@ public class Child {
         this.setCategory();
     }
 
-    public Child(Child c) {
+    // Used for deep copy
+    public Child(final Child c) {
         this.id = c.getId();
         this.lastName = c.getLastName();
         this.firstName = c.getFirstName();
@@ -58,7 +64,7 @@ public class Child {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(final Integer id) {
         this.id = id;
     }
 
@@ -66,7 +72,7 @@ public class Child {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(final String lastName) {
         this.lastName = lastName;
     }
 
@@ -74,7 +80,7 @@ public class Child {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
+    public void setFirstName(final String firstName) {
         this.firstName = firstName;
     }
 
@@ -82,7 +88,7 @@ public class Child {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(final Integer age) {
         this.age = age;
     }
 
@@ -90,7 +96,7 @@ public class Child {
         return city;
     }
 
-    public void setCity(Cities city) {
+    public void setCity(final Cities city) {
         this.city = city;
     }
 
@@ -98,7 +104,7 @@ public class Child {
         return averageScore;
     }
 
-    public void setAverageScore(Double averageScore) {
+    public void setAverageScore(final Double averageScore) {
         this.averageScore = averageScore;
     }
 
@@ -106,7 +112,7 @@ public class Child {
         return giftsPreferences;
     }
 
-    public void setGiftsPreferences(List<Category> giftsPreferences) {
+    public void setGiftsPreferences(final List<Category> giftsPreferences) {
         this.giftsPreferences = giftsPreferences;
     }
 
@@ -114,7 +120,7 @@ public class Child {
         return niceScoreHistory;
     }
 
-    public void setNiceScoreHistory(List<Double> niceScoreHistory) {
+    public void setNiceScoreHistory(final List<Double> niceScoreHistory) {
         this.niceScoreHistory = niceScoreHistory;
     }
 
@@ -122,7 +128,7 @@ public class Child {
         return assignedBudget;
     }
 
-    public void setAssignedBudget(Double assignedBudget) {
+    public void setAssignedBudget(final Double assignedBudget) {
         this.assignedBudget = assignedBudget;
     }
 
@@ -130,7 +136,7 @@ public class Child {
         return receivedGifts;
     }
 
-    public void setReceivedGifts(List<Gift> receivedGifts) {
+    public void setReceivedGifts(final List<Gift> receivedGifts) {
         this.receivedGifts = receivedGifts;
     }
 
@@ -138,23 +144,36 @@ public class Child {
         return category;
     }
 
+    /**
+     * Decides which age category every child fits in
+     */
     public void setCategory() {
-        if (Integer.compare(this.age, 5) < 0) {
+        if (Integer.compare(this.age, MAX_BABY) < 0) {
             this.category = ChildCategory.BABY;
-        } else if (Integer.compare(this.age, 5) >= 0 && Integer.compare(this.age, 12) < 0) {
+        } else if (Integer.compare(this.age, MAX_BABY) >= 0
+                && Integer.compare(this.age, MAX_KID) < 0) {
             this.category = ChildCategory.KID;
-        } else if (Integer.compare(this.age, 12) >= 0 && Integer.compare(this.age, 18) <= 0) {
+        } else if (Integer.compare(this.age, MAX_KID) >= 0
+                && Integer.compare(this.age, MAX_TEEN) <= 0) {
             this.category = ChildCategory.TEEN;
-        } else if (Integer.compare(this.age, 18) > 0) {
+        } else if (Integer.compare(this.age, MAX_TEEN) > 0) {
             this.category = ChildCategory.YOUNG_ADULT;
         }
     }
 
-    public void addScore(Double score) {
+    /**
+     * Add a score to the history of nice scores of the child
+     * @param score the added score
+     */
+    public void addScore(final Double score) {
         this.niceScoreHistory.add(score);
     }
 
-    public void applyGiftPreferencesStrategy(List<Category> preferences) {
+    /**
+     * Updates the list of preferences of a child
+     * @param preferences the new preferences added to the list
+     */
+    public void applyGiftPreferencesCommand(final List<Category> preferences) {
         GiftPreferencesCommand command = new GiftPreferencesCommand(this, preferences);
         command.execute();
     }

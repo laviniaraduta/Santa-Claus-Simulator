@@ -6,14 +6,15 @@ import fileio.GiftInput;
 
 import java.util.List;
 
-public class AnnualChange {
+public final class AnnualChange {
     private Double newSantaBudget;
     private List<GiftInput> newGifts;
     private List<ChildInput> newChildren;
     private List<ChildUpdateInput> childrenUpdates;
 
-    public AnnualChange(Double newSantaBudget, List<GiftInput> newGifts,
-                        List<ChildInput> newChildren, List<ChildUpdateInput> childrenUpdates) {
+    public AnnualChange(final Double newSantaBudget, final List<GiftInput> newGifts,
+                        final List<ChildInput> newChildren,
+                        final List<ChildUpdateInput> childrenUpdates) {
         this.newSantaBudget = newSantaBudget;
         this.newGifts = newGifts;
         this.newChildren = newChildren;
@@ -24,7 +25,7 @@ public class AnnualChange {
         return newSantaBudget;
     }
 
-    public void setNewSantaBudget(Double newSantaBudget) {
+    public void setNewSantaBudget(final Double newSantaBudget) {
         this.newSantaBudget = newSantaBudget;
     }
 
@@ -32,7 +33,7 @@ public class AnnualChange {
         return newGifts;
     }
 
-    public void setNewGifts(List<GiftInput> newGifts) {
+    public void setNewGifts(final List<GiftInput> newGifts) {
         this.newGifts = newGifts;
     }
 
@@ -40,7 +41,7 @@ public class AnnualChange {
         return newChildren;
     }
 
-    public void setNewChildren(List<ChildInput> newChildren) {
+    public void setNewChildren(final List<ChildInput> newChildren) {
         this.newChildren = newChildren;
     }
 
@@ -48,7 +49,7 @@ public class AnnualChange {
         return childrenUpdates;
     }
 
-    public void setChildrenUpdates(List<ChildUpdateInput> childrenUpdates) {
+    public void setChildrenUpdates(final List<ChildUpdateInput> childrenUpdates) {
         this.childrenUpdates = childrenUpdates;
     }
 }

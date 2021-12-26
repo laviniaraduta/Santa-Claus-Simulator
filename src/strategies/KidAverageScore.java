@@ -2,11 +2,10 @@ package strategies;
 
 import entities.Child;
 
-public class KidAverageScore extends AverageScoreStrategy {
-
+public final class KidAverageScore extends AverageScoreStrategy {
     @Override
-    public void computeAverageScore(Child child) {
-        Double sum = 0d;
+    public void computeAverageScore(final Child child) {
+        Double sum = 0D;
         for (Double score : child.getNiceScoreHistory()) {
             sum += score;
         }

@@ -7,23 +7,28 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Output {
+public final class Output {
     private List<ChildrenDatabase> annualChildren = new ArrayList<ChildrenDatabase>();
 
     public List<ChildrenDatabase> getAnnualChildren() {
         return annualChildren;
     }
 
-    public void setAnnualChildren(List<ChildrenDatabase> annualChildren) {
+    public void setAnnualChildren(final List<ChildrenDatabase> annualChildren) {
         this.annualChildren = annualChildren;
     }
 
-    public void addDatabase(ChildrenDatabase database) {
+    /**
+     * Add the database of children from the current year to the list
+     * @param database the database that needs to be written in the output file
+     */
+    public void addDatabase(final ChildrenDatabase database) {
         List<Child> copy = new ArrayList<Child>();
         for (Child child : database.getChildren()) {
             copy.add(new Child(child));
         }
-        ChildrenDatabase cd = new ChildrenDatabase(Collections.unmodifiableList(copy));
-        this.annualChildren.add(cd);
+        ChildrenDatabase childrenDatabase =
+                new ChildrenDatabase(Collections.unmodifiableList(copy));
+        this.annualChildren.add(childrenDatabase);
     }
 }

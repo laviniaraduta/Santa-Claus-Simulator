@@ -1,21 +1,27 @@
 package databases;
 
-import entities.*;
+
+import entities.Child;
+import entities.ChildrenFactory;
+import entities.Gift;
+import entities.GiftsFactory;
+import entities.AnnualChange;
 import fileio.AnnualChangeInput;
-import fileio.ChildInput;
 import fileio.GameDataInput;
-import fileio.GiftInput;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Database {
+public final class Database {
 
-    // make the database singleton
+    // Make the database singleton
     private static Database database = null;
     private Database() {
     }
 
+    /**
+     * @return the instance of the database
+     */
     public static Database getDatabase() {
         if (database == null) {
             database = new Database();
@@ -29,7 +35,7 @@ public class Database {
      * @param game the input data about the simulation
      * @return a list of children that will be used in the simulation
      */
-    public static List<Child> getChildrenList(GameDataInput game) {
+    public static List<Child> getChildrenList(final GameDataInput game) {
         List<Child> childrenList = new ArrayList<Child>();
         for (int i = 0; i < game.getInitialData().getChildren().size(); i++) {
             ChildrenFactory factory = ChildrenFactory.getFactory();
@@ -45,7 +51,7 @@ public class Database {
      * @return a list of gifts that will be used in the simulation
      */
 
-    public static List<Gift> getGiftsList(GameDataInput game) {
+    public static List<Gift> getGiftsList(final GameDataInput game) {
         List<Gift> giftsList = new ArrayList<Gift>();
         for (int i = 0; i < game.getInitialData().getSantaGiftsList().size(); i++) {
             GiftsFactory factory = GiftsFactory.getFactory();
@@ -54,13 +60,19 @@ public class Database {
         }
         return giftsList;
     }
-//    // lista care contine schimbarile anuale
-    public static List<AnnualChange> getAnnualChangeList(GameDataInput game) {
+
+    /**
+     * Returns a list containing the annual changes of each year o the simulation
+     * @param game the input data of the simulation
+     * @return a list of the annual changes
+     */
+    public static List<AnnualChange> getAnnualChangeList(final GameDataInput game) {
         List<AnnualChange> annualChangeList = new ArrayList<AnnualChange>();
         for (int i = 0; i < game.getAnnualChanges().size(); i++) {
             AnnualChangeInput annualChangeInput = game.getAnnualChanges().get(i);
-            AnnualChange newChange = new AnnualChange(annualChangeInput.getNewSantaBudget(), annualChangeInput.getNewGifts(),
-                    annualChangeInput.getNewChildren(), annualChangeInput.getChildrenUpdates());
+            AnnualChange newChange = new AnnualChange(annualChangeInput.getNewSantaBudget(),
+                    annualChangeInput.getNewGifts(), annualChangeInput.getNewChildren(),
+                    annualChangeInput.getChildrenUpdates());
             annualChangeList.add(newChange);
         }
         return annualChangeList;
