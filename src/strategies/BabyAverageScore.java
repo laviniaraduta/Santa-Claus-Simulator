@@ -1,7 +1,6 @@
-package strategies.score;
+package strategies;
 
 import entities.Child;
-import strategies.score.AverageScoreStrategy;
 
 public class BabyAverageScore extends AverageScoreStrategy {
     @Override

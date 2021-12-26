@@ -14,7 +14,7 @@ public class ChildrenFactory {
         return factory;
     }
 
-    public Child createChild(ChildInput childInput) {
+    public static Child createChild(ChildInput childInput) {
         return new Child(childInput.getId(), childInput.getLastName(),
                 childInput.getFirstName(), childInput.getNiceScore(),
                 childInput.getAge(), childInput.getCity(),

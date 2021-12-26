@@ -1,10 +1,10 @@
 package entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import commands.GiftPreferencesCommand;
 import enums.Category;
 import enums.ChildCategory;
 import enums.Cities;
-import strategies.gift.GiftPreferencesStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -155,7 +155,7 @@ public class Child {
     }
 
     public void applyGiftPreferencesStrategy(List<Category> preferences) {
-        GiftPreferencesStrategy strategy = new GiftPreferencesStrategy();
-        strategy.addPreferences(this, preferences);
+        GiftPreferencesCommand command = new GiftPreferencesCommand(this, preferences);
+        command.execute();
     }
 }

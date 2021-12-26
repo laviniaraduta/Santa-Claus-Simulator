@@ -11,6 +11,7 @@ import java.util.List;
 
 public class Database {
 
+    // make the database singleton
     private static Database database = null;
     private Database() {
     }
@@ -21,7 +22,13 @@ public class Database {
         }
         return database;
     }
-    // lista cu copii care initial ii contine pe cei din initial data
+
+    /**
+     * Returns the list containing all the children that are initially in the game
+     * it transfers the children from the input class to the game's database
+     * @param game the input data about the simulation
+     * @return a list of children that will be used in the simulation
+     */
     public static List<Child> getChildrenList(GameDataInput game) {
         List<Child> childrenList = new ArrayList<Child>();
         for (int i = 0; i < game.getInitialData().getChildren().size(); i++) {
@@ -31,7 +38,13 @@ public class Database {
         }
         return childrenList;
     }
-//    // lista de cadouri care initial le contine pe cele din initial data
+    /**
+     * Returns the list containing all the gifts that are initially in the game
+     * it transfers the gifts from the input class to the game's database
+     * @param game the input data about the simulation
+     * @return a list of gifts that will be used in the simulation
+     */
+
     public static List<Gift> getGiftsList(GameDataInput game) {
         List<Gift> giftsList = new ArrayList<Gift>();
         for (int i = 0; i < game.getInitialData().getSantaGiftsList().size(); i++) {
@@ -52,10 +65,4 @@ public class Database {
         }
         return annualChangeList;
     }
-
-    public void clearDatabase() {
-        database = null;
-    }
-
-
 }

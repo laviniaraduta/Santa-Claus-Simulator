@@ -1,11 +1,6 @@
-package strategies.score;
+package strategies;
 
 import entities.Child;
-import strategies.score.AverageScoreStrategy;
-
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 public class TeenAverageScore extends AverageScoreStrategy {
     @Override

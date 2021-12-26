@@ -7,6 +7,9 @@ import entities.AnnualChange;
 import entities.Child;
 import entities.Gift;
 import fileio.*;
+import commands.AsignBudgetCommand;
+import commands.DeleteYoungAdultsCommand;
+import commands.ReceiveGiftsCommand;
 
 import java.util.List;
 
@@ -21,12 +24,15 @@ public class Simulation {
         List<AnnualChange> annualChangeList = Database.getAnnualChangeList(game);
         ChildrenDatabase childrenDatabase = new ChildrenDatabase(childrenList);
         GiftsDatabase giftsDatabase = new GiftsDatabase(giftList);
-        childrenDatabase.applyDeleteYoungAdultsStrategy();
+
+        childrenDatabase.applyCommand(new DeleteYoungAdultsCommand(childrenList));
+//        childrenDatabase.applyDeleteYoungAdultsStrategy();
         childrenDatabase.applyScoreStrategy();
         childrenDatabase.setAverageScoresSum();
-        childrenDatabase.applyAssignedBudgetStrategy(game.getSantaBudget());
-        childrenDatabase.applyReceiveGiftsStrategy(giftsDatabase);
-
+        childrenDatabase.applyCommand(new AsignBudgetCommand(childrenList, game.getSantaBudget(), childrenDatabase.getAverageScoresSum()));
+        childrenDatabase.applyCommand(new ReceiveGiftsCommand(childrenList, giftsDatabase));
+//        childrenDatabase.applyAssignedBudgetStrategy(game.getSantaBudget());
+//        childrenDatabase.applyReceiveGiftsStrategy(giftsDatabase);
 
         Output output = new Output();
         output.addDatabase(childrenDatabase);
@@ -40,7 +46,6 @@ public class Simulation {
             round++;
             output.addDatabase(childrenDatabase);
         }
-        Database.getDatabase().clearDatabase();
         return output;
     }
 }

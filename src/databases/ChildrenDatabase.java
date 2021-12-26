@@ -1,21 +1,15 @@
 package databases;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import commands.*;
 import entities.AnnualChange;
 import entities.Child;
 import entities.ChildrenFactory;
-import enums.Category;
 import enums.ChildCategory;
 import fileio.ChildInput;
 import fileio.ChildUpdateInput;
-import strategies.age.DeleteYoungAdultsStrategy;
-import strategies.age.IncreaseAgeStrategy;
-import strategies.budget.AssignedBudgetStrategy;
-import strategies.gift.GiftPreferencesStrategy;
-import strategies.gift.ReceiveGiftsStrategy;
-import strategies.score.BabyAverageScore;
-import strategies.score.KidAverageScore;
-import strategies.score.TeenAverageScore;
+import strategies.StrategyFactory;
+import strategies.AverageScoreStrategy;
 
 import java.util.List;
 
@@ -36,8 +30,7 @@ public class ChildrenDatabase {
         this.children = childrenList;
     }
     public void addChild(ChildInput childInput) {
-        ChildrenFactory factory = ChildrenFactory.getFactory();
-        Child newChild = factory.createChild(childInput);
+        Child newChild = ChildrenFactory.createChild(childInput);
         this.children.add(newChild);
     }
 
@@ -58,42 +51,22 @@ public class ChildrenDatabase {
     public void applyScoreStrategy() {
         for (Child child : this.children) {
             if (child.getCategory().equals(ChildCategory.KID)) {
-                KidAverageScore kidAverageScore = new KidAverageScore();
+                AverageScoreStrategy kidAverageScore = StrategyFactory.createStrategy(StrategyFactory.StrategyType.KID_SCORE);
                 kidAverageScore.computeAverageScore(child);
             } else if (child.getCategory().equals(ChildCategory.BABY)) {
-                BabyAverageScore babyAverageScore = new BabyAverageScore();
+                AverageScoreStrategy babyAverageScore = StrategyFactory
+                        .createStrategy(StrategyFactory.StrategyType.BABY_SCORE);
                 babyAverageScore.computeAverageScore(child);
             } else if (child.getCategory().equals(ChildCategory.TEEN)) {
-                TeenAverageScore teenAverageScore = new TeenAverageScore();
+                AverageScoreStrategy teenAverageScore = StrategyFactory
+                        .createStrategy(StrategyFactory.StrategyType.TEEN_SCORE);
                 teenAverageScore.computeAverageScore(child);
             }
         }
     }
 
-    public void applyAssignedBudgetStrategy(Double totalBudget) {
-        AssignedBudgetStrategy strategy = new AssignedBudgetStrategy();
-        for (Child child : this.children) {
-            strategy.computeAssignedBudget(child, totalBudget, this.averageScoresSum);
-        }
-    }
-
-    public void applyDeleteYoungAdultsStrategy() {
-        DeleteYoungAdultsStrategy strategy = new DeleteYoungAdultsStrategy();
-        strategy.deleteYoungAdults(this.children);
-    }
-
-    public void applyIncreaseAgeStrategy() {
-        IncreaseAgeStrategy strategy = new IncreaseAgeStrategy();
-        for (Child child : this.children) {
-            strategy.computeNewAge(child);
-        }
-    }
-
-    public void applyReceiveGiftsStrategy(GiftsDatabase gifts) {
-        ReceiveGiftsStrategy strategy = new ReceiveGiftsStrategy();
-        for (Child child : this.children) {
-            strategy.receiveGifts(child, gifts);
-        }
+    public void applyCommand(Command command) {
+        command.execute();
     }
 
     public Child findChildById(Integer id) {
@@ -106,11 +79,11 @@ public class ChildrenDatabase {
     }
 
     public void update(AnnualChange change, GiftsDatabase gifts) {
-        this.applyIncreaseAgeStrategy();
+        this.applyCommand(new IncreaseAgeCommand(this.children));
         for (ChildInput child : change.getNewChildren()) {
             this.addChild(child);
         }
-        this.applyDeleteYoungAdultsStrategy();
+        this.applyCommand(new DeleteYoungAdultsCommand(this.children));
         for (ChildUpdateInput childUpdate : change.getChildrenUpdates()) {
             Child foundChild = findChildById(childUpdate.getId());
             if (foundChild != null) {
@@ -124,7 +97,7 @@ public class ChildrenDatabase {
         }
         this.applyScoreStrategy();
         this.setAverageScoresSum();
-        this.applyAssignedBudgetStrategy(change.getNewSantaBudget());
-        this.applyReceiveGiftsStrategy(gifts);
+        this.applyCommand(new AsignBudgetCommand(this.children, change.getNewSantaBudget(), this.getAverageScoresSum()));
+        this.applyCommand(new ReceiveGiftsCommand(this.children, gifts));
     }
 }

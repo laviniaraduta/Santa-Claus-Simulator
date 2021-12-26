@@ -42,16 +42,21 @@ public final class Main {
 
         for (File file : Objects.requireNonNull(directory.listFiles())) {
             InputLoad inputLoader = new InputLoad(file.getPath());
-            GameDataInput game = inputLoader.readInput();
-            String filepath = Constants.OUT_PATH + file.getName();
-            File out = new File(filepath);
-            boolean isCreated = out.createNewFile();
-            if (isCreated) {
-                System.out.println("created");
+            try {
+                GameDataInput game = inputLoader.readInput();
+                String filepath = Constants.OUT_PATH + file.getName();
+                File out = new File(filepath);
+                boolean isCreated = out.createNewFile();
+                if (isCreated) {
+                    System.out.println("created");
+                }
+                Output output = Simulation.applyRound(game);
+                Writer writer = new Writer(filepath);
+                writer.writeToFile(output);
+            } catch (Exception exception) {
+                System.out.println("error");
             }
-            Output output = Simulation.applyRound(game);
-            Writer writer = new Writer(filepath);
-            writer.writeToFile(output);
+
         }
 
 //            InputLoad inputLoader = new InputLoad("tests\\test23.json");
