@@ -19,7 +19,9 @@ public final class IncreaseAgeCommand implements Command {
         this.children = children;
     }
 
-    // Increase the age of the children after each year
+    /**
+     * Increase the age of the children after each year
+     */
     @Override
     public void execute() {
         for (Child child : children) {

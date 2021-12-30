@@ -41,7 +41,9 @@ public final class AssignBudgetCommand implements Command {
         this.sum = sum;
     }
 
-    // Assign to each child their budget
+    /**
+     * Assign to each child their budget
+     */
     @Override
     public void execute() {
         Double budgetUnit = (Double) totalBudget / sum;

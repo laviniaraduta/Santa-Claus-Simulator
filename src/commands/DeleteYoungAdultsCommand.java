@@ -20,7 +20,9 @@ public final class DeleteYoungAdultsCommand implements Command {
         this.children = children;
     }
 
-    // Removes the children that are now young adults (have > 18 yrs old)
+    /**
+     * Removes the children that are now young adults (have > 18 yrs old)
+     */
     @Override
     public void execute() {
         Iterator<Child> child = children.iterator();

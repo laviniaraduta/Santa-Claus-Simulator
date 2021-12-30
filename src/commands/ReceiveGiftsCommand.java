@@ -32,7 +32,9 @@ public final class ReceiveGiftsCommand implements Command {
         this.gifts = gifts;
     }
 
-    // Assign the gifts for every child according to their preferences
+    /**
+     * Assign the gifts for every child according to their preferences
+     */
     @Override
     public void execute() {
         for (Child child : children) {

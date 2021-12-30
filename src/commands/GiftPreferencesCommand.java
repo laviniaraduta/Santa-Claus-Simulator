@@ -30,7 +30,9 @@ public final class GiftPreferencesCommand implements Command {
         this.preferences = preferences;
     }
 
-    // add the new preferences from the current year
+    /**
+     * Add the new preferences from the current year
+     */
     @Override
     public void execute() {
         // iterate from the last item to put the preferences in the correct order in the front
