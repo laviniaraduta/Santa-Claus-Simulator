@@ -29,4 +29,5 @@ public class Writer {
         ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
         objectWriter.writeValue(new File(outputPath), output);
     }
+
 }

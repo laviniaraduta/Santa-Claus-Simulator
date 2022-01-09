@@ -26,6 +26,6 @@ public final class ChildrenFactory {
         return new Child(childInput.getId(), childInput.getLastName(),
                 childInput.getFirstName(), childInput.getNiceScore(),
                 childInput.getAge(), childInput.getCity(),
-                childInput.getGiftsPreferences());
+                childInput.getGiftsPreferences(), childInput.getNiceScoreBonus(), childInput.getElf());
     }
 }

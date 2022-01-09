@@ -24,6 +24,6 @@ public final class GiftsFactory {
      */
     public Gift createGift(final GiftInput giftInput) {
         return new Gift(giftInput.getProductName(), giftInput.getPrice(),
-                giftInput.getCategory());
+                giftInput.getCategory(), giftInput.getQuantity());
     }
 }

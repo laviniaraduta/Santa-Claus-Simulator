@@ -5,6 +5,7 @@ import commands.GiftPreferencesCommand;
 import enums.Category;
 import enums.ChildCategory;
 import enums.Cities;
+import enums.ElvesType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,13 +27,17 @@ public final class Child {
     private List<Gift> receivedGifts = new ArrayList<Gift>();
     @JsonIgnore
     private ChildCategory category;
+    @JsonIgnore
+    private Double niceScoreBonus;
+    @JsonIgnore
+    private ElvesType elf;
 
     public Child() {
 
     }
     public Child(final Integer id, final String lastName, final String firstName,
                  final Double niceScore, final Integer age, final Cities city,
-                 final List<Category> giftsPreferences) {
+                 final List<Category> giftsPreferences, final Double niceScoreBonus, final ElvesType elf) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -41,6 +46,8 @@ public final class Child {
         this.giftsPreferences = giftsPreferences;
         this.niceScoreHistory.add(niceScore);
         this.setCategory();
+        this.niceScoreBonus = niceScoreBonus;
+        this.elf = elf;
     }
 
     // Used for deep copy
@@ -58,6 +65,8 @@ public final class Child {
         this.receivedGifts.addAll(c.getReceivedGifts());
         this.assignedBudget = c.getAssignedBudget();
         this.averageScore = c.getAverageScore();
+        this.elf = c.getElf();
+        this.niceScoreBonus = c.getNiceScoreBonus();
     }
 
     public Integer getId() {
@@ -142,6 +151,22 @@ public final class Child {
 
     public ChildCategory getCategory() {
         return category;
+    }
+
+    public Double getNiceScoreBonus() {
+        return niceScoreBonus;
+    }
+
+    public void setNiceScoreBonus(Double niceScoreBonus) {
+        this.niceScoreBonus = niceScoreBonus;
+    }
+
+    public ElvesType getElf() {
+        return elf;
+    }
+
+    public void setElf(ElvesType elf) {
+        this.elf = elf;
     }
 
     /**

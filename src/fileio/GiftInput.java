@@ -6,6 +6,7 @@ public final class GiftInput {
     private String productName;
     private Double price;
     private Category category;
+    private Integer quantity;
 
     public String getProductName() {
         return productName;
@@ -29,5 +30,13 @@ public final class GiftInput {
 
     public void setCategory(final Category category) {
         this.category = category;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
 }
