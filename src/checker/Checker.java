@@ -2,24 +2,18 @@ package checker;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import common.Constants;
 
 import java.io.File;
 import java.io.IOException;
 
 public final class Checker {
 
-    private Checker() {
-        //constructor for checkstyle
-    }
     /**
      * This method is used to calculate total score of the implementation and checkstyle
      */
     public static void calculateScore() {
-
-        System.out.println("TOTAL : "
-                + (calculateScoreAllTests() + calculateScoreCheckstyle()) + "/70");
-        System.out.println("-----------------------------------------------------");
+        calculateScoreAllTests();
+        calculateScoreCheckstyle();
     }
 
     /**
@@ -27,8 +21,8 @@ public final class Checker {
      *
      * (5 points maximum)
      */
-    private static int calculateScoreCheckstyle() {
-        return Checkstyle.testCheckstyle();
+    private static void calculateScoreCheckstyle() {
+        Checkstyle.testCheckstyle();
     }
 
     /**
@@ -36,14 +30,13 @@ public final class Checker {
      *
      * 25 tests (60 points maximum)
      */
-    private static int calculateScoreAllTests() {
+    private static void calculateScoreAllTests() {
         int totalScore = 0;
-        for (int i = 1; i <= Constants.TESTS_NUMBER; i++) {
+        for (int i = 1; i <= 30; i++) {
             totalScore += calculateScore(i);
         }
         System.out.println("-----------------------------------------------------");
         System.out.println("TESTS = " + totalScore + "/60");
-        return totalScore;
     }
 
     /**
@@ -54,17 +47,15 @@ public final class Checker {
      * @param testNumber
      *          the testNumber you want to calculate score for
      * @return
-     *          the score of that test (2 for tests : 1-15) (3 for tests : 16 - 25)
+     *          the score of that test (1 for tests : 1 -12 ) (2 for tests : 13 - 19) (3 for tests : 20 - 29) (4 for test : 30)
      */
-    public static int calculateScore(final Integer testNumber) {
+    public static int calculateScore(Integer testNumber) {
         if (checkOutput(testNumber)) {
-            System.out.println("test" + testNumber
-                    + ".json ----------------------------- PASSED (+"
-                    + getScoreForTest(testNumber) + ")");
+            System.out.println("test" + testNumber + ".json ----------------------------- PASSED (+" + getScoreForTest(testNumber) + ")");
             return getScoreForTest(testNumber);
-        } else {
-            System.out.println("test" + testNumber
-                    + ".json  ----------------------------- FAILED (+0)");
+        }
+        else {
+            System.out.println("test" + testNumber + ".json  ----------------------------- FAILED (+0)");
             return 0;
         }
     }
@@ -77,22 +68,14 @@ public final class Checker {
      * @return
      *          if the two files are equal or not
      */
-    private static boolean checkOutput(final Integer testNumber) {
+    private static boolean checkOutput(Integer testNumber) {
         ObjectMapper mapper = new ObjectMapper();
 
         try {
-            File outputFile = new File(Constants.OUTPUT_PATH + testNumber
-                    + Constants.FILE_EXTENSION);
-            if (outputFile.exists()) {
-                JsonNode output = mapper.readTree(outputFile);
-                JsonNode ref = mapper
-                        .readTree(new File(Constants.REF_PATH + testNumber
-                                + Constants.FILE_EXTENSION));
+            JsonNode output = mapper.readTree(new File("output/out_test" + testNumber + ".json"));
+            JsonNode ref = mapper.readTree(new File("ref/ref_test" + testNumber + ".json"));
 
-                return output.equals(ref);
-            } else {
-                return false;
-            }
+            return output.equals(ref);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -105,10 +88,18 @@ public final class Checker {
      * @param testNumber
      *      the testNumber you want to calculate score for
      * @return
-     *      the score of that test (2 for tests : 1-15) (3 for tests : 16 - 25)
+     *      the score of that test (1 for tests : 1 -12 ) (2 for tests : 13 - 19) (3 for tests : 20 - 29) (4 for test : 30)
      */
-    private static int getScoreForTest(final Integer testNumber) {
-        return (testNumber >= 1 && testNumber <= Constants.TESTS_NUMBER_SMALL)
-                ? Constants.SMALL_TEST_POINTS : Constants.BIG_TEST_POINTS;
+    private static int getScoreForTest(Integer testNumber) {
+        if (testNumber >=1 && testNumber <= 12) {
+            return 1;
+        }
+        if (testNumber >=13 && testNumber <= 19) {
+            return 2;
+        }
+        if (testNumber >=20 && testNumber <= 29) {
+            return 3;
+        }
+        return 4;
     }
 }

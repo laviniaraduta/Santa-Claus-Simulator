@@ -1,1 +1,46 @@
-# ProiectPOO
+
+Raduta Lavinia-Maria 323CA
+Object Oriented Programming Course
+Project Stage 1 - Santa Claus is coming to ACS Students
+
+December 2021
+# Description of packages:
+    > commands: contains all the commands that do all the tasks throughout
+    the simulation.
+    > databases: contains the databases for children, gifts and a database that
+    manage children, gifts and changes and is used to create the other two
+    databases.
+    > entities: contains the entities used in the program and 2 factories to
+    create children and gifts from the input information classes.
+    > fileio: contains the classes used to store the initial information from
+    the input JSONs and the classes for writing the output in the result JSONs.
+    > strategies: contains the strategies used for computing the nicescore for
+    all the children categories and a factory to create the strategy needed.
+
+# The simulation flow
+    - The simulation class is the one that coordinates all the flow of the
+    program, as it applies the changes of every year.
+    - the first thing that needs to be done is populate the databases.
+    - now we have the information for the first year of the simulation and we
+    can start applying the commands and strategies:
+        - delete the young adults, because they will not receive gifts;
+        - calculate the nice scores for all the remaining children;
+        - calculate the budget for every child;
+        - decide which gifts every child receive and give them.
+    - then the output object is created.
+    - output will contain a list of children databases, every element being a
+    version of the children database from the correspondent year (every year a
+    deep copy of the children database is added at the list contained in the
+    output class).
+    - then for each round of the simulation, the new budget is set, the new
+    gifts and new children are added to the correct database and the children
+    database in updated in order to add it changed to the output at the end
+    of the round.
+    - the update consists in:
+        - increasing the age of all the children and checking if any of them
+        became young adult (if so, remove them from the database);
+        - for every child mentioned in the update list, changing the attributes
+        (add the nicescore, add the new preferences);
+        - then the applying of strategies and commands is repeated as in the
+        initial stage.
+    - after all the rounds, the output is written to the out JSON.
