@@ -77,7 +77,7 @@ public final class ChildInput {
         return niceScoreBonus;
     }
 
-    public void setNiceScoreBonus(Double niceScoreBonus) {
+    public void setNiceScoreBonus(final Double niceScoreBonus) {
         this.niceScoreBonus = niceScoreBonus;
     }
 
@@ -85,7 +85,7 @@ public final class ChildInput {
         return elf;
     }
 
-    public void setElf(ElvesType elf) {
+    public void setElf(final ElvesType elf) {
         this.elf = elf;
     }
 }

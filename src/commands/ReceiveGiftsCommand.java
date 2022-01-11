@@ -44,10 +44,17 @@ public final class ReceiveGiftsCommand implements Command {
                 // Keep a sort set of santa's gifts in ascending order by their prices
                 TreeSet<Gift> giftsOfCategory = gifts.getGiftsMap().get(category);
                 if (giftsOfCategory != null) {
-                    if (Double.compare(remainingBudget, giftsOfCategory.first().getPrice()) > 0) {
-                        child.getReceivedGifts().add(giftsOfCategory.first());
-                        remainingBudget -= giftsOfCategory.first().getPrice();
+                    for (Gift gift : giftsOfCategory) {
+                        if (Double.compare(remainingBudget, gift.getPrice()) > 0 &&
+                                gift.getQuantity() > 0) {
+                            Integer quantity = gift.getQuantity();
+                            gift.setQuantity(quantity - 1);
+                            child.getReceivedGifts().add(gift);
+                            remainingBudget -= gift.getPrice();
+                            break;
+                        }
                     }
+
                 }
             }
         }

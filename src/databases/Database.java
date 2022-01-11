@@ -72,7 +72,7 @@ public final class Database {
             AnnualChangeInput annualChangeInput = game.getAnnualChanges().get(i);
             AnnualChange newChange = new AnnualChange(annualChangeInput.getNewSantaBudget(),
                     annualChangeInput.getNewGifts(), annualChangeInput.getNewChildren(),
-                    annualChangeInput.getChildrenUpdates());
+                    annualChangeInput.getChildrenUpdates(), annualChangeInput.getStrategy());
             annualChangeList.add(newChange);
         }
         return annualChangeList;

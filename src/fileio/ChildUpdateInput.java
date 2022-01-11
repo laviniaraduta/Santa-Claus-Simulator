@@ -1,12 +1,15 @@
 package fileio;
 
 import enums.Category;
+import enums.ElvesType;
+
 import java.util.List;
 
 public final  class ChildUpdateInput {
     private Integer id;
     private Double niceScore;
     private List<Category> giftsPreferences;
+    private ElvesType elf;
 
     public ChildUpdateInput() {
 
@@ -33,5 +36,13 @@ public final  class ChildUpdateInput {
 
     public void setGiftsPreferences(final List<Category> giftsPreferences) {
         this.giftsPreferences = giftsPreferences;
+    }
+
+    public ElvesType getElf() {
+        return elf;
+    }
+
+    public void setElf(ElvesType elf) {
+        this.elf = elf;
     }
 }

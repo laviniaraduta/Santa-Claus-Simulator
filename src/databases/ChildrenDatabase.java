@@ -10,8 +10,11 @@ import entities.AnnualChange;
 import entities.Child;
 import entities.ChildrenFactory;
 import enums.ChildCategory;
+import enums.CityStrategyEnum;
 import fileio.ChildInput;
 import fileio.ChildUpdateInput;
+import sorting.SortStrategy;
+import sorting.SortStrategyFactory;
 import strategies.StrategyFactory;
 import strategies.AverageScoreStrategy;
 
@@ -130,6 +133,11 @@ public final class ChildrenDatabase {
         this.setAverageScoresSum();
         this.applyCommand(new AssignBudgetCommand(this.children,
                 change.getNewSantaBudget(), this.getAverageScoresSum()));
+        // aici ar trebui sortata lista de copii in functie de strategie
+        SortStrategy strategy = SortStrategyFactory.createSortStrategy(change.getStrategy());
+        strategy.sort(this.children);
         this.applyCommand(new ReceiveGiftsCommand(this.children, gifts));
+        strategy = SortStrategyFactory.createSortStrategy(CityStrategyEnum.ID);
+        strategy.sort(this.children);
     }
 }
