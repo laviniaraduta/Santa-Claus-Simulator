@@ -41,7 +41,7 @@ public final class Main {
         File outputDirectory = new File(Constants.RESULT_PATH);
 
         for (int i = 1; i <= TESTS_NUMBER; i++) {
-//        for (int i = 14; i <= 14; i++) {
+//        for (int i = 20; i <= 20; i++) {
             File inputFile = new File(TESTS_PATH + "test" + i + FILE_EXTENSION);
             InputLoad inputLoader = new InputLoad(inputFile.getAbsolutePath());
             try {

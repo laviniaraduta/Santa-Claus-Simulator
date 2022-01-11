@@ -127,6 +127,7 @@ public final class ChildrenDatabase {
                 if (!childUpdate.getGiftsPreferences().isEmpty()) {
                     foundChild.applyGiftPreferencesCommand(childUpdate.getGiftsPreferences());
                 }
+                foundChild.setElf(childUpdate.getElf());
             }
         }
         this.applyScoreStrategy();

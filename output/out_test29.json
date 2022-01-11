@@ -103,7 +103,7 @@
       "giftsPreferences" : [ "Sweets", "Toys", "Board Games" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 4.0, 8.0 ],
-      "assignedBudget" : 145.1939291736931,
+      "assignedBudget" : 207.41989881956155,
       "receivedGifts" : [ {
         "productName" : "Bag of Candy",
         "price" : 20.0,
@@ -172,7 +172,7 @@
       "giftsPreferences" : [ "Toys", "Sweets", "Books" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 8.0 ],
-      "assignedBudget" : 269.64586846543,
+      "assignedBudget" : 145.1939291736931,
       "receivedGifts" : [ {
         "productName" : "Doll",
         "price" : 10.0,
@@ -193,7 +193,7 @@
       "giftsPreferences" : [ "Books", "Toys", "Sweets", "Board Games" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 4.0, 8.0, 8.0 ],
-      "assignedBudget" : 133.0891719745223,
+      "assignedBudget" : 190.12738853503183,
       "receivedGifts" : [ {
         "productName" : "Doll",
         "price" : 10.0,
@@ -231,7 +231,7 @@
       "giftsPreferences" : [ "Books", "Technology", "Board Games", "Toys", "Sweets" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 8.0, 5.0 ],
-      "assignedBudget" : 247.16560509554137,
+      "assignedBudget" : 133.0891719745223,
       "receivedGifts" : [ {
         "productName" : "Headphones",
         "price" : 100.0,
@@ -282,7 +282,7 @@
       "giftsPreferences" : [ "Sweets", "Books", "Toys", "Board Games" ],
       "averageScore" : 10.0,
       "niceScoreHistory" : [ 4.0, 8.0, 8.0 ],
-      "assignedBudget" : 169.1917912338485,
+      "assignedBudget" : 241.70255890549785,
       "receivedGifts" : [ {
         "productName" : "Chocolate",
         "price" : 15.0,
