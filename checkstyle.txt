@@ -15,12 +15,8 @@ Starting audit...
 [ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\main\Main.java:17:1: Duplicate import to line 4 - common.Constants. [RedundantImport]
 [ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\main\Main.java:19:31: Using the '.*' form of import should be avoided - common.Constants.*. [AvoidStarImport]
 [ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\sorting\SortByCity.java:6:17: Using the '.*' form of import should be avoided - java.util.*. [AvoidStarImport]
-[ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\sorting\SortByCity.java:7:8: Unused import - java.util.stream.Collectors. [UnusedImports]
-[ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\sorting\SortByCity.java:10:5: Class 'SortByCity' looks like designed for extension (can be subclassed), but the method 'sort' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'SortByCity' final or making the method 'sort' static/final/abstract/empty, or adding allowed annotation for the method. [DesignForExtension]
-[ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\sorting\SortByCity.java:11:22: Parameter children should be final. [FinalParameters]
-[ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\sorting\SortByCity.java:46: Line is longer than 100 characters (found 111). [LineLength]
-[ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\sorting\SortByCity.java:51:32: Parameter o1 should be final. [FinalParameters]
-[ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\sorting\SortByCity.java:51:43: Parameter o2 should be final. [FinalParameters]
+[ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\sorting\SortByCity.java:9:5: Class 'SortByCity' looks like designed for extension (can be subclassed), but the method 'sort' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'SortByCity' final or making the method 'sort' static/final/abstract/empty, or adding allowed annotation for the method. [DesignForExtension]
+[ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\sorting\SortByCity.java:10:22: Parameter children should be final. [FinalParameters]
 [ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\sorting\SortById.java:11:5: Class 'SortById' looks like designed for extension (can be subclassed), but the method 'sort' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'SortById' final or making the method 'sort' static/final/abstract/empty, or adding allowed annotation for the method. [DesignForExtension]
 [ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\sorting\SortById.java:12:22: Parameter children should be final. [FinalParameters]
 [ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\sorting\SortByScore.java:6:8: Unused import - java.util.Comparator. [UnusedImports]
@@ -38,4 +34,4 @@ Starting audit...
 [ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\strategies\KidAverageScore.java:15:68: '100D' is a magic number. [MagicNumber]
 [ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\strategies\TeenAverageScore.java:16:68: '100D' is a magic number. [MagicNumber]
 Audit done.
-Checkstyle ends with 38 errors.
+Checkstyle ends with 34 errors.
