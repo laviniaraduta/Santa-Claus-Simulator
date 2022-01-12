@@ -1,18 +1,15 @@
 package sorting;
 
-import entities.Child;
 import enums.CityStrategyEnum;
-import strategies.BabyAverageScore;
-import strategies.KidAverageScore;
-import strategies.TeenAverageScore;
 
-import java.util.List;
-
-public class SortStrategyFactory {
+public final class SortStrategyFactory {
     private static SortStrategyFactory sortStrategyFactory = null;
     private SortStrategyFactory() {
     }
 
+    /**
+     * @return an instance of the factory
+     */
     public static SortStrategyFactory getSortStrategyFactory() {
         if (sortStrategyFactory == null) {
             sortStrategyFactory = new SortStrategyFactory();
@@ -20,6 +17,11 @@ public class SortStrategyFactory {
         return sortStrategyFactory;
     }
 
+    /**
+     * Creates the correct strategy according to the type given
+     * @param type the type of strategy
+     * @return the concrete strategy
+     */
     public static SortStrategy createSortStrategy(final CityStrategyEnum type) {
         return switch (type) {
             case NICE_SCORE_CITY -> new SortByCity();

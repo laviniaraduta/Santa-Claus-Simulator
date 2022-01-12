@@ -2,6 +2,7 @@ package strategies;
 
 import entities.Child;
 
+import static common.Constants.FULL_PERCENT;
 import static common.Constants.PERFECT_NICE_SCORE;
 
 public final class TeenAverageScore extends AverageScoreStrategy {
@@ -13,7 +14,7 @@ public final class TeenAverageScore extends AverageScoreStrategy {
             sum += (Double) child.getNiceScoreHistory().get(i) * (i + 1);
         }
         Double averageScore = (Double) (2 * sum) / (n * (n + 1));
-        averageScore += averageScore * child.getNiceScoreBonus() / 100D;
+        averageScore += averageScore * child.getNiceScoreBonus() / FULL_PERCENT;
         if (averageScore > PERFECT_NICE_SCORE) {
             child.setAverageScore(PERFECT_NICE_SCORE);
         } else {

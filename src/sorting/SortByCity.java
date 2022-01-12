@@ -3,11 +3,16 @@ package sorting;
 import entities.Child;
 import enums.Cities;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
-public class SortByCity implements SortStrategy {
+public final class SortByCity implements SortStrategy {
     @Override
-    public void sort(List<Child> children) {
+    public void sort(final List<Child> children) {
         Map<Cities, Integer> cityWithCount = new HashMap<>();
         Map<Cities, LinkedList<Double>> cityWithScores = new HashMap<>();
         Map<Cities, Double> cityWithAverage = new HashMap<>();

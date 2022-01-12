@@ -4,6 +4,8 @@ import entities.Child;
 
 import java.util.List;
 
+import static common.Constants.FULL_PERCENT;
+import static common.Constants.PERCENT;
 import static enums.ElvesType.BLACK;
 import static enums.ElvesType.PINK;
 
@@ -53,10 +55,10 @@ public final class AssignBudgetCommand implements Command {
         for (Child child : children) {
             Double budget = budgetUnit * child.getAverageScore();
             if (child.getElf().equals(BLACK)) {
-                budget -= budget * 30D / 100D;
+                budget -= budget * PERCENT / FULL_PERCENT;
                 child.setAssignedBudget(budget);
             } else if (child.getElf().equals(PINK)) {
-                budget += budget * 30D / 100D;
+                budget += budget * PERCENT / FULL_PERCENT;
                 child.setAssignedBudget(budget);
             } else {
                 child.setAssignedBudget(budget);

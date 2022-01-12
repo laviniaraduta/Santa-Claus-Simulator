@@ -47,8 +47,8 @@ public final class ReceiveGiftsCommand implements Command {
                 TreeSet<Gift> giftsOfCategory = gifts.getGiftsMap().get(category);
                 if (giftsOfCategory != null) {
                     for (Gift gift : giftsOfCategory) {
-                        if (Double.compare(remainingBudget, gift.getPrice()) > 0 &&
-                                gift.getQuantity() > 0) {
+                        if (Double.compare(remainingBudget, gift.getPrice()) > 0
+                                && gift.getQuantity() > 0) {
                             Integer quantity = gift.getQuantity();
                             gift.setQuantity(quantity - 1);
                             child.getReceivedGifts().add(gift);
@@ -61,7 +61,8 @@ public final class ReceiveGiftsCommand implements Command {
         }
         for (Child child : children) {
             if (child.getElf().equals(YELLOW) && child.getReceivedGifts().isEmpty()) {
-                TreeSet<Gift> giftsOfCategory = gifts.getGiftsMap().get(child.getGiftsPreferences().get(0));
+                TreeSet<Gift> giftsOfCategory = gifts.getGiftsMap()
+                        .get(child.getGiftsPreferences().get(0));
                 if (giftsOfCategory != null) {
                     Gift gift = giftsOfCategory.first();
                     if (gift.getQuantity() > 0) {

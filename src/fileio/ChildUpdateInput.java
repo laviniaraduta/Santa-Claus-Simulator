@@ -42,7 +42,7 @@ public final  class ChildUpdateInput {
         return elf;
     }
 
-    public void setElf(ElvesType elf) {
+    public void setElf(final ElvesType elf) {
         this.elf = elf;
     }
 }
