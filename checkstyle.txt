@@ -3,7 +3,8 @@ Starting audit...
 [ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\commands\AssignBudgetCommand.java:56:42: '100D' is a magic number. [MagicNumber]
 [ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\commands\AssignBudgetCommand.java:59:36: '30D' is a magic number. [MagicNumber]
 [ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\commands\AssignBudgetCommand.java:59:42: '100D' is a magic number. [MagicNumber]
-[ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\commands\ReceiveGiftsCommand.java:48:82: '&&' should be on a new line. [OperatorWrap]
+[ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\commands\ReceiveGiftsCommand.java:50:82: '&&' should be on a new line. [OperatorWrap]
+[ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\commands\ReceiveGiftsCommand.java:64: Line is longer than 100 characters (found 108). [LineLength]
 [ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\entities\Child.java:40: Line is longer than 100 characters (found 107). [LineLength]
 [ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\entities\ChildrenFactory.java:29: Line is longer than 100 characters (found 103). [LineLength]
 [ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\entities\Gift.java:13: Line is longer than 100 characters (found 112). [LineLength]
@@ -34,4 +35,4 @@ Starting audit...
 [ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\strategies\KidAverageScore.java:15:68: '100D' is a magic number. [MagicNumber]
 [ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\strategies\TeenAverageScore.java:16:68: '100D' is a magic number. [MagicNumber]
 Audit done.
-Checkstyle ends with 34 errors.
+Checkstyle ends with 35 errors.
