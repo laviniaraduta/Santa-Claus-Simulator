@@ -1,4 +1,4 @@
-package score_strategies;
+package scorestrategies;
 
 public final class StrategyFactory {
     private static StrategyFactory strategyFactory = null;

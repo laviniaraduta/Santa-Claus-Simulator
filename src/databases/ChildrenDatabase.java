@@ -15,8 +15,8 @@ import fileio.ChildInput;
 import fileio.ChildUpdateInput;
 import sorting.SortStrategy;
 import sorting.SortStrategyFactory;
-import score_strategies.StrategyFactory;
-import score_strategies.AverageScoreStrategy;
+import scorestrategies.StrategyFactory;
+import scorestrategies.AverageScoreStrategy;
 
 import java.util.List;
 

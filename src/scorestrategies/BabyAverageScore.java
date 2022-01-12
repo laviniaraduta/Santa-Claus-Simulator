@@ -1,4 +1,4 @@
-package score_strategies;
+package scorestrategies;
 
 import entities.Child;
 
