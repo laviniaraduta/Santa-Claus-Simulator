@@ -14,7 +14,7 @@ December 2021
     create children and gifts from the input information classes.
     > fileio: contains the classes used to store the initial information from
     the input JSONs and the classes for writing the output in the result JSONs.
-    > strategies: contains the strategies used for computing the nicescore for
+    > score_strategies: contains the score_strategies used for computing the nicescore for
     all the children categories and a factory to create the strategy needed.
 
 # The simulation flow
@@ -22,7 +22,7 @@ December 2021
     program, as it applies the changes of every year.
     - the first thing that needs to be done is populate the databases.
     - now we have the information for the first year of the simulation and we
-    can start applying the commands and strategies:
+    can start applying the commands and score_strategies:
         - delete the young adults, because they will not receive gifts;
         - calculate the nice scores for all the remaining children;
         - calculate the budget for every child;
@@ -41,6 +41,6 @@ December 2021
         became young adult (if so, remove them from the database);
         - for every child mentioned in the update list, changing the attributes
         (add the nicescore, add the new preferences);
-        - then the applying of strategies and commands is repeated as in the
+        - then the applying of score_strategies and commands is repeated as in the
         initial stage.
     - after all the rounds, the output is written to the out JSON.

@@ -18,6 +18,8 @@ public final class Constants {
     public static final Integer MAX_BABY = 5;
     public static final Integer MAX_KID = 12;
     public static final Integer MAX_TEEN = 18;
+    public static final Double PERCENT = 30D;
+    public static final Double FULL_PERCENT = 100D;
 
 
 

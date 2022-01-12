@@ -10,7 +10,8 @@ public final class Gift {
     @JsonIgnore
     private Integer quantity;
 
-    public Gift(final String productName, final Double price, final Category category, final Integer quantity) {
+    public Gift(final String productName, final Double price,
+                final Category category, final Integer quantity) {
         this.productName = productName;
         this.price = price;
         this.category = category;
@@ -45,7 +46,7 @@ public final class Gift {
         return quantity;
     }
 
-    public void setQuantity(Integer quantity) {
+    public void setQuantity(final Integer quantity) {
         this.quantity = quantity;
     }
 }

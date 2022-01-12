@@ -37,7 +37,8 @@ public final class Child {
     }
     public Child(final Integer id, final String lastName, final String firstName,
                  final Double niceScore, final Integer age, final Cities city,
-                 final List<Category> giftsPreferences, final Double niceScoreBonus, final ElvesType elf) {
+                 final List<Category> giftsPreferences, final Double niceScoreBonus,
+                 final ElvesType elf) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -157,7 +158,7 @@ public final class Child {
         return niceScoreBonus;
     }
 
-    public void setNiceScoreBonus(Double niceScoreBonus) {
+    public void setNiceScoreBonus(final Double niceScoreBonus) {
         this.niceScoreBonus = niceScoreBonus;
     }
 
@@ -165,7 +166,7 @@ public final class Child {
         return elf;
     }
 
-    public void setElf(ElvesType elf) {
+    public void setElf(final ElvesType elf) {
         this.elf = elf;
     }
 

@@ -13,11 +13,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Objects;
-import common.Constants;
 
-import static common.Constants.*;
 import static common.Constants.FILE_EXTENSION;
+import static common.Constants.TESTS_NUMBER;
+import static common.Constants.TESTS_PATH;
 
 /**
  * Class used to run the code
@@ -42,7 +41,7 @@ public final class Main {
 
         for (int i = 1; i <= TESTS_NUMBER; i++) {
             File inputFile = new File(TESTS_PATH + "test" + i + FILE_EXTENSION);
-            InputLoad inputLoader = new InputLoad(inputFile.getPath());
+            InputLoad inputLoader = new InputLoad(inputFile.getAbsolutePath());
             try {
                 GameDataInput game = inputLoader.readInput();
                 String filepath = Constants.OUT_PATH + i + FILE_EXTENSION;
