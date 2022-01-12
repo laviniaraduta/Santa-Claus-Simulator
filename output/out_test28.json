@@ -507,10 +507,6 @@
       "niceScoreHistory" : [ 8.0, 9.0, 6.0, 6.0, 6.0 ],
       "assignedBudget" : 83.02928766757351,
       "receivedGifts" : [ {
-        "productName" : "Lego",
-        "price" : 30.0,
-        "category" : "Toys"
-      }, {
         "productName" : "Monopoly",
         "price" : 30.0,
         "category" : "Board Games"
@@ -582,6 +578,10 @@
       "niceScoreHistory" : [ 10.0 ],
       "assignedBudget" : 97.75818799164857,
       "receivedGifts" : [ {
+        "productName" : "Lego",
+        "price" : 30.0,
+        "category" : "Toys"
+      }, {
         "productName" : "Monopoly",
         "price" : 30.0,
         "category" : "Board Games"

@@ -328,10 +328,6 @@
         "productName" : "Handbag",
         "price" : 200.0,
         "category" : "Clothes"
-      }, {
-        "productName" : "Doll",
-        "price" : 10.0,
-        "category" : "Toys"
       } ]
     }, {
       "id" : 1,
@@ -344,8 +340,8 @@
       "niceScoreHistory" : [ 4.0, 6.0, 6.0 ],
       "assignedBudget" : 226.43142068119056,
       "receivedGifts" : [ {
-        "productName" : "Bike",
-        "price" : 25.0,
+        "productName" : "Doll",
+        "price" : 10.0,
         "category" : "Toys"
       }, {
         "productName" : "Headphones",
@@ -371,17 +367,9 @@
         "price" : 35.0,
         "category" : "Books"
       }, {
-        "productName" : "Milk and Cookies",
-        "price" : 30.0,
-        "category" : "Sweets"
-      }, {
         "productName" : "Headphones",
         "price" : 100.0,
         "category" : "Technology"
-      }, {
-        "productName" : "Bike",
-        "price" : 25.0,
-        "category" : "Toys"
       } ]
     }, {
       "id" : 3,
@@ -412,6 +400,10 @@
         "productName" : "Handbag",
         "price" : 200.0,
         "category" : "Clothes"
+      }, {
+        "productName" : "Bike",
+        "price" : 25.0,
+        "category" : "Toys"
       } ]
     }, {
       "id" : 5,
@@ -424,9 +416,17 @@
       "niceScoreHistory" : [ 8.0, 9.0 ],
       "assignedBudget" : 280.34366370052163,
       "receivedGifts" : [ {
+        "productName" : "Bike",
+        "price" : 25.0,
+        "category" : "Toys"
+      }, {
         "productName" : "Handbag",
         "price" : 200.0,
         "category" : "Clothes"
+      }, {
+        "productName" : "Milk and Cookies",
+        "price" : 30.0,
+        "category" : "Sweets"
       } ]
     }, {
       "id" : 6,

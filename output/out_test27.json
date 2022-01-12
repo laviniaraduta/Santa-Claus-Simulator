@@ -208,16 +208,12 @@
       "niceScoreHistory" : [ 2.0, 9.0, 6.0 ],
       "assignedBudget" : 134.86607142857144,
       "receivedGifts" : [ {
-        "productName" : "Twilight",
-        "price" : 30.0,
-        "category" : "Books"
-      }, {
         "productName" : "Bag of Candy",
         "price" : 20.0,
         "category" : "Sweets"
       }, {
-        "productName" : "Monopoly",
-        "price" : 30.0,
+        "productName" : "Puzzle",
+        "price" : 50.0,
         "category" : "Board Games"
       } ]
     }, {
@@ -312,9 +308,13 @@
         "price" : 15.0,
         "category" : "Toys"
       }, {
-        "productName" : "Puzzle",
-        "price" : 50.0,
+        "productName" : "Monopoly",
+        "price" : 30.0,
         "category" : "Board Games"
+      }, {
+        "productName" : "Twilight",
+        "price" : 30.0,
+        "category" : "Books"
       } ]
     } ]
   }, {

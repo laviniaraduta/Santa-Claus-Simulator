@@ -13,7 +13,7 @@ public class SortByScore implements SortStrategy {
             if (Double.compare(o1.getAverageScore(), o2.getAverageScore()) == 0) {
                 return o1.getId() - o2.getId();
             } else {
-                return (int) (o2.getAverageScore() - o1.getAverageScore());
+                return Double.compare(o2.getAverageScore(), o1.getAverageScore());
             }
         });
     }
