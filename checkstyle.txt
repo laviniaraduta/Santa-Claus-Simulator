@@ -1,2 +1,8 @@
 Starting audit...
+[ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\score_strategies\AverageScoreStrategy.java:1:9: Name 'score_strategies' must match pattern '^[a-z]+(\.[a-zA-Z_][a-zA-Z0-9_]*)*$'. [PackageName]
+[ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\score_strategies\BabyAverageScore.java:1:9: Name 'score_strategies' must match pattern '^[a-z]+(\.[a-zA-Z_][a-zA-Z0-9_]*)*$'. [PackageName]
+[ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\score_strategies\KidAverageScore.java:1:9: Name 'score_strategies' must match pattern '^[a-z]+(\.[a-zA-Z_][a-zA-Z0-9_]*)*$'. [PackageName]
+[ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\score_strategies\StrategyFactory.java:1:9: Name 'score_strategies' must match pattern '^[a-z]+(\.[a-zA-Z_][a-zA-Z0-9_]*)*$'. [PackageName]
+[ERROR] C:\Users\lavin\Desktop\ProiectPOO\.\src\score_strategies\TeenAverageScore.java:1:9: Name 'score_strategies' must match pattern '^[a-z]+(\.[a-zA-Z_][a-zA-Z0-9_]*)*$'. [PackageName]
 Audit done.
+Checkstyle ends with 5 errors.

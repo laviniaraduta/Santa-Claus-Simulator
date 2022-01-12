@@ -15,8 +15,8 @@ import fileio.ChildInput;
 import fileio.ChildUpdateInput;
 import sorting.SortStrategy;
 import sorting.SortStrategyFactory;
-import strategies.StrategyFactory;
-import strategies.AverageScoreStrategy;
+import score_strategies.StrategyFactory;
+import score_strategies.AverageScoreStrategy;
 
 import java.util.List;
 
@@ -134,10 +134,11 @@ public final class ChildrenDatabase {
         this.setAverageScoresSum();
         this.applyCommand(new AssignBudgetCommand(this.children,
                 change.getNewSantaBudget(), this.getAverageScoresSum()));
-        // aici ar trebui sortata lista de copii in functie de strategie
+        // sort the children according to the strategy
         SortStrategy strategy = SortStrategyFactory.createSortStrategy(change.getStrategy());
         strategy.sort(this.children);
         this.applyCommand(new ReceiveGiftsCommand(this.children, gifts));
+        // sort them back by id to print
         strategy = SortStrategyFactory.createSortStrategy(CityStrategyEnum.ID);
         strategy.sort(this.children);
     }
