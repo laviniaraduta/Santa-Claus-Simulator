@@ -17,7 +17,7 @@ the input JSONs and the classes for writing the output in the result JSONs.
 6. **score_strategies**: contains the strategies used for computing the nicescore for
 all the children categories and a factory to create the strategy needed.
 
-###The simulation flow
+### The simulation flow
 - The **Simulation** class is the one that coordinates all the flow of the
 program, as it applies the changes of every year.
 - The first thing that needs to be done is to **populate the databases**.
@@ -54,7 +54,7 @@ output class).
     initial stage.
 - After all the rounds, the output is written to the out JSON.
 
-###Design Patterns used.
+### Design Patterns used.
 1. **Singleton Pattern**: Used for databases and strategies factories.
 2. **Factory**: Used to create a concrete strategy for sort and average score computing.
 3. **Command**: Used to implement all the step of the update of the database
